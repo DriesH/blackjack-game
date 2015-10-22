@@ -25,5 +25,15 @@ namespace blackjack_game
         {
 
         }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            _startResetController.StartGame(btnStart);
+        }
+
+        private void btnRestart_Click(object sender, EventArgs e)
+        {
+            _startResetController.ResetGame(btnStart);
+        }
     }
 }
