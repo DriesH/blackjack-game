@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace blackjack_game
 {
-  public class PlayerButtonsController
+  public class CardDeckController
   {
 
-     PlayerButtonsView _playerButtonsView;
-        public PlayerButtonsModel _playerButtonsModel;
+        CardDeckView _cardDeckView;
+        public CardDeckModel _cardDeckModel;
         public int[] drawnCards;
 
-        public PlayerButtonsController()
+        public CardDeckController()
         {
-          _playerButtonsView = new PlayerButtonsView(this);
-          _playerButtonsModel = new PlayerButtonsModel();
+          _cardDeckView = new CardDeckView(this);
+          _cardDeckModel = new CardDeckModel();
         }
 
-        public PlayerButtonsView getView()
+        public CardDeckView getView()
         {
-          return _playerButtonsView;
+          return _cardDeckView;
         }
 
         public string getRandomCard()
@@ -41,12 +41,12 @@ namespace blackjack_game
               else
               {
                 drawnCards[drawnCards.Length] = cardIndex;
-                return _playerButtonsModel.ArrCards[cardIndex];
+                return _cardDeckModel.ArrCards[cardIndex];
               }
             }
           }
           drawnCards[0] = cardIndex;
-          return _playerButtonsModel.ArrCards[cardIndex];
+            return _cardDeckModel.ArrCards[cardIndex];
         }
 
         public int getCardValue(string card, int currentTotal)

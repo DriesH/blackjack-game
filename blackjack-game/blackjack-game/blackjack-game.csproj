@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DealerView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DealerView.Designer.cs">
+      <DependentUpon>DealerView.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,12 @@
     <Compile Include="PlayerBetView.Designer.cs">
       <DependentUpon>PlayerBetView.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlayerButtonsController.cs" />
+    <Compile Include="PlayerButtonsModel.cs" />
+    <Compile Include="PlayerButtonsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PlayerButtonsView.Designer.cs" />
     <Compile Include="PlayerController.cs" />
     <Compile Include="PlayerModel.cs" />
     <Compile Include="PlayerView.cs">

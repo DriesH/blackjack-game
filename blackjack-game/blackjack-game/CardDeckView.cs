@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace blackjack_game
 {
-  public partial class PlayerButtonsView : UserControl
+  public partial class CardDeckView : UserControl
   {
-    PlayerButtonsController _playerButtonsController;
+    CardDeckController _cardDeckController;
 
-    public PlayerButtonsView(PlayerButtonsController controller)
+    public CardDeckView(CardDeckController _controller)
     {
       InitializeComponent();
-      _playerButtonsController = controller;
+      _cardDeckController = _controller;
     }
 
     private void btnHit_Click(object sender, EventArgs e)
     {
-      _playerButtonsController.getRandomCard();
+      _cardDeckController.getRandomCard();
     }
   }
 }
