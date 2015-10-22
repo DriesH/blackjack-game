@@ -28,34 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.moneylabel = new System.Windows.Forms.Label();
-            this.kaartenlabel = new System.Windows.Forms.Label();
+            this.lblMoney = new System.Windows.Forms.Label();
+            this.lblKaarten = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // moneylabel
+            // lblMoney
             // 
-            this.moneylabel.AutoSize = true;
-            this.moneylabel.Location = new System.Drawing.Point(12, 16);
-            this.moneylabel.Name = "moneylabel";
-            this.moneylabel.Size = new System.Drawing.Size(58, 17);
-            this.moneylabel.TabIndex = 0;
-            this.moneylabel.Text = "Money: ";
+            this.lblMoney.AutoSize = true;
+            this.lblMoney.Location = new System.Drawing.Point(12, 16);
+            this.lblMoney.Name = "lblMoney";
+            this.lblMoney.Size = new System.Drawing.Size(58, 17);
+            this.lblMoney.TabIndex = 0;
+            this.lblMoney.Text = "Money: ";
             // 
-            // kaartenlabel
+            // lblKaarten
             // 
-            this.kaartenlabel.AutoSize = true;
-            this.kaartenlabel.Location = new System.Drawing.Point(172, 16);
-            this.kaartenlabel.Name = "kaartenlabel";
-            this.kaartenlabel.Size = new System.Drawing.Size(66, 17);
-            this.kaartenlabel.TabIndex = 1;
-            this.kaartenlabel.Text = "Kaarten: ";
+            this.lblKaarten.AutoSize = true;
+            this.lblKaarten.Location = new System.Drawing.Point(172, 16);
+            this.lblKaarten.Name = "lblKaarten";
+            this.lblKaarten.Size = new System.Drawing.Size(66, 17);
+            this.lblKaarten.TabIndex = 1;
+            this.lblKaarten.Text = "Kaarten: ";
             // 
             // PlayerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.kaartenlabel);
-            this.Controls.Add(this.moneylabel);
+            this.Controls.Add(this.lblKaarten);
+            this.Controls.Add(this.lblMoney);
             this.Name = "PlayerView";
             this.Size = new System.Drawing.Size(286, 52);
             this.Load += new System.EventHandler(this.PlayerView_Load);
@@ -66,7 +66,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label moneylabel;
-        private System.Windows.Forms.Label kaartenlabel;
+        private System.Windows.Forms.Label lblMoney;
+        private System.Windows.Forms.Label lblKaarten;
     }
 }
