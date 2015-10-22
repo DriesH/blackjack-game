@@ -22,8 +22,8 @@ namespace blackjack_game
             //init
             PlayerController player1 = new PlayerController();
             PlayerBetController bet = new PlayerBetController(player1);
-            StartResetController startReset = new StartResetController();
             CardDeckController cards = new CardDeckController();
+            StartResetController startReset = new StartResetController(cards);
 
             //add
             Controls.Add(player1.getView());

@@ -10,7 +10,7 @@ namespace blackjack_game
   {
         CardDeckView _cardDeckView;
         public CardDeckModel _cardDeckModel;
-        public int[] drawnCards;
+        public List<int> drawnCards = new List<int>();
 
         public CardDeckController()
         {
@@ -27,25 +27,32 @@ namespace blackjack_game
         {
           Random rnd = new Random();
           int cardIndex = rnd.Next(0, 52);
+          int sizeOfDrawnCards = drawnCards.Count();
 
           if (drawnCards != null)
           {
-            for (int i = 0; i < drawnCards.Length; i++)
+            for (int i = 0; i < sizeOfDrawnCards; i++)
             {
               if (drawnCards.Contains(cardIndex))
               {
-                drawnCards[drawnCards.Length] = cardIndex;
+                drawnCards.Add(cardIndex);
                 getRandomCard();
               }
               else
               {
-                drawnCards[drawnCards.Length] = cardIndex;
+                drawnCards.Add(cardIndex);
                 return _cardDeckModel.ArrCards[cardIndex];
               }
             }
           }
-          drawnCards[0] = cardIndex;
-            return _cardDeckModel.ArrCards[cardIndex];
+          drawnCards.Add(cardIndex);
+          return _cardDeckModel.ArrCards[cardIndex];
+        }
+
+        public void resetDrawnCards()
+        {
+            drawnCards.Clear();
+
         }
 
         public int getCardValue(string card, int currentTotal)
@@ -53,6 +60,7 @@ namespace blackjack_game
 
           return 709;
         }
+
 
   }
 }

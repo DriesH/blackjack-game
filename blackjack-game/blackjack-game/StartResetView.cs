@@ -34,6 +34,7 @@ namespace blackjack_game
         private void btnRestart_Click(object sender, EventArgs e)
         {
             _startResetController.ResetGame(btnStart);
+            
         }
     }
 }
