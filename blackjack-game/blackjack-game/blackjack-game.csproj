@@ -52,6 +52,14 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlayerBetController.cs" />
+    <Compile Include="PlayerBetModel.cs" />
+    <Compile Include="PlayerBetView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PlayerBetView.Designer.cs">
+      <DependentUpon>PlayerBetView.cs</DependentUpon>
+    </Compile>
     <Compile Include="PlayerController.cs" />
     <Compile Include="PlayerModel.cs" />
     <Compile Include="PlayerView.cs">
@@ -64,6 +72,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerBetView.resx">
+      <DependentUpon>PlayerBetView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlayerView.resx">
       <DependentUpon>PlayerView.cs</DependentUpon>
