@@ -28,18 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnBet = new System.Windows.Forms.Button();
+            this.txtBetMoney = new System.Windows.Forms.TextBox();
+            this.lblBetMoney = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // btnBet
+            // 
+            this.btnBet.Location = new System.Drawing.Point(34, 120);
+            this.btnBet.Name = "btnBet";
+            this.btnBet.Size = new System.Drawing.Size(247, 63);
+            this.btnBet.TabIndex = 0;
+            this.btnBet.Text = "Bet!";
+            this.btnBet.UseVisualStyleBackColor = true;
+            this.btnBet.Click += new System.EventHandler(this.btnBet_Click);
+            // 
+            // txtBetMoney
+            // 
+            this.txtBetMoney.Location = new System.Drawing.Point(34, 59);
+            this.txtBetMoney.Name = "txtBetMoney";
+            this.txtBetMoney.Size = new System.Drawing.Size(247, 31);
+            this.txtBetMoney.TabIndex = 1;
+            // 
+            // lblBetMoney
+            // 
+            this.lblBetMoney.AutoSize = true;
+            this.lblBetMoney.Location = new System.Drawing.Point(29, 31);
+            this.lblBetMoney.Name = "lblBetMoney";
+            this.lblBetMoney.Size = new System.Drawing.Size(120, 25);
+            this.lblBetMoney.TabIndex = 2;
+            this.lblBetMoney.Text = "Bet money:";
             // 
             // PlayerBetView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblBetMoney);
+            this.Controls.Add(this.txtBetMoney);
+            this.Controls.Add(this.btnBet);
             this.Name = "PlayerBetView";
+            this.Size = new System.Drawing.Size(315, 240);
             this.Load += new System.EventHandler(this.PlayerBetView_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnBet;
+        private System.Windows.Forms.TextBox txtBetMoney;
+        private System.Windows.Forms.Label lblBetMoney;
     }
 }
