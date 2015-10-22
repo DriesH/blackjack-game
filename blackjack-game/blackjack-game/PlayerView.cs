@@ -13,6 +13,9 @@ namespace blackjack_game
     public partial class PlayerView : UserControl
     {
         PlayerController _playercontroller;
+        public Label _lblKaarten;
+        public Label _lblMoney;
+
 
         public PlayerView(PlayerController _controller)
         {
@@ -22,7 +25,8 @@ namespace blackjack_game
 
         private void PlayerView_Load(object sender, EventArgs e)
         {
-           
+            _lblKaarten = lblKaarten;
+            _lblMoney = lblMoney;  
         }
 
     }
