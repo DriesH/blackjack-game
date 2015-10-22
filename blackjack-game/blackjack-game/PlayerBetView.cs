@@ -13,6 +13,8 @@ namespace blackjack_game
     public partial class PlayerBetView : UserControl
     {
         PlayerBetController _playerBetController;
+        
+
 
         public PlayerBetView(PlayerBetController _controller)
         {
@@ -23,6 +25,11 @@ namespace blackjack_game
         private void PlayerBetView_Load(object sender, EventArgs e)
         {
             Controls.Add(_playerBetController.getView());
+        }
+
+        private void btnBet_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

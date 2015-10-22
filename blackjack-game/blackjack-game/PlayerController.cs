@@ -8,12 +8,12 @@ namespace blackjack_game
 {
     public class PlayerController
     {
-        PlayerView _playerview;
-        public PlayerModel _playermodel;
+        PlayerView _playerView;
+        public PlayerModel _playerModel;
 
         public PlayerController() {
-            _playerview = new PlayerView(this);
-            _playermodel = new PlayerModel();
+            _playerView = new PlayerView(this);
+            _playerModel = new PlayerModel();
         }
 
     }
