@@ -14,8 +14,6 @@ namespace blackjack_game
     {
         PlayerBetController _playerBetController;
         
-
-
         public PlayerBetView(PlayerBetController _controller)
         {
             _playerBetController = _controller;
@@ -30,6 +28,11 @@ namespace blackjack_game
         private void btnBet_Click(object sender, EventArgs e)
         {
             _playerBetController.Bet(txtBetMoney);
+        }
+
+        private void txtBetMoney_Click(object sender, EventArgs e)
+        {
+            _playerBetController.ClearTxtBox(txtBetMoney);
         }
     }
 }

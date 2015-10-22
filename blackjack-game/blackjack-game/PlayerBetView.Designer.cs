@@ -49,6 +49,7 @@
             this.txtBetMoney.Name = "txtBetMoney";
             this.txtBetMoney.Size = new System.Drawing.Size(247, 31);
             this.txtBetMoney.TabIndex = 1;
+            this.txtBetMoney.Click += new System.EventHandler(this.txtBetMoney_Click);
             // 
             // lblBetMoney
             // 

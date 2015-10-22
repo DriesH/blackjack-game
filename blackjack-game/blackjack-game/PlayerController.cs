@@ -24,7 +24,7 @@ namespace blackjack_game
 
         public void updateMoney()
         {
-            _playerView._lblMoney.Text = _playerModel.CurrentMoney.ToString();
+            _playerView._lblMoney.Text = "Money: " + _playerModel.CurrentMoney.ToString();
         }
     }
 }

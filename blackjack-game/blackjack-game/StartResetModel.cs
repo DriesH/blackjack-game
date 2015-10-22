@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace blackjack_game
 {
-    public class PlayerBetModel
+    public class StartResetModel
     {
-        private int bettedMoney;
+        bool gameStarted = false;
 
-        public int BettedMoney
+        public bool GameStarted
         {
             get
             {
-                return bettedMoney;
+                return gameStarted;
             }
             set
             {
-                bettedMoney = value;
+                gameStarted = value;
             }
         }
     }
