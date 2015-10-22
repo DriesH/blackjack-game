@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
+<<<<<<< HEAD:blackjack-game/blackjack-game/Gameform.Designer.cs
+=======
 <<<<<<< HEAD:blackjack-game/blackjack-game/Form1.Designer.cs
             this.label1 = new System.Windows.Forms.Label();
+>>>>>>> cc2768305354e101213d484e3dc22db236ca36a3
             this.SuspendLayout();
             // 
             // label1
@@ -73,17 +77,48 @@
             this.Name = "Gameform";
             this.Text = "Form1";
             this.ResumeLayout(false);
+<<<<<<< HEAD
+=======
+            this.label1 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(239, 206);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Testetztzetz";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(548, 383);
+            this.Controls.Add(this.label1);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+>>>>>>> 8616b2c097cc4deb60705554e5e51042685c07ed:blackjack-game/blackjack-game/Form1.Designer.cs
+=======
 >>>>>>> a06eedc2b5c29ac4776cb0ba79559d5700ebb434:blackjack-game/blackjack-game/Gameform.Designer.cs
+>>>>>>> cc2768305354e101213d484e3dc22db236ca36a3
 
         }
 
         #endregion
 
+<<<<<<< HEAD
+        private System.Windows.Forms.Label label1;
+=======
 <<<<<<< HEAD:blackjack-game/blackjack-game/Form1.Designer.cs
         private System.Windows.Forms.Label label1;
 =======
         private System.Windows.Forms.Button buttonDries;
 >>>>>>> a06eedc2b5c29ac4776cb0ba79559d5700ebb434:blackjack-game/blackjack-game/Gameform.Designer.cs
+>>>>>>> cc2768305354e101213d484e3dc22db236ca36a3
     }
 }
 
