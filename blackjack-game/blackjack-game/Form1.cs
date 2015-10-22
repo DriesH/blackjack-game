@@ -16,5 +16,10 @@ namespace blackjack_game
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            PlayerController player1 = new PlayerController();
+        }
     }
 }
