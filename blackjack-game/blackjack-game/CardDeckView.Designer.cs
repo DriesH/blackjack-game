@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnHit = new System.Windows.Forms.Button();
+            this.btnDrawCard = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnHit
+            // btnDrawCard
             // 
-            this.btnHit.Location = new System.Drawing.Point(38, 91);
-            this.btnHit.Name = "btnHit";
-            this.btnHit.Size = new System.Drawing.Size(171, 62);
-            this.btnHit.TabIndex = 0;
-            this.btnHit.Text = "Hit";
-            this.btnHit.UseVisualStyleBackColor = true;
-            this.btnHit.Click += new System.EventHandler(this.btnHit_Click);
+            this.btnDrawCard.Location = new System.Drawing.Point(38, 91);
+            this.btnDrawCard.Name = "btnDrawCard";
+            this.btnDrawCard.Size = new System.Drawing.Size(171, 62);
+            this.btnDrawCard.TabIndex = 0;
+            this.btnDrawCard.Text = "Draw card";
+            this.btnDrawCard.UseVisualStyleBackColor = true;
+            this.btnDrawCard.Click += new System.EventHandler(this.btnDrawCard_Click);
             // 
             // btnStop
             // 
@@ -56,7 +56,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnStop);
-            this.Controls.Add(this.btnHit);
+            this.Controls.Add(this.btnDrawCard);
             this.Name = "CardDeckView";
             this.Size = new System.Drawing.Size(459, 243);
             this.Load += new System.EventHandler(this.CardDeckView_Load);
@@ -66,7 +66,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnHit;
+        private System.Windows.Forms.Button btnDrawCard;
         private System.Windows.Forms.Button btnStop;
     }
 }

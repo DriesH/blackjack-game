@@ -25,7 +25,7 @@ namespace blackjack_game
 
         }
 
-        private void btnHit_Click(object sender, EventArgs e)
+        private void btnDrawCard_Click(object sender, EventArgs e)
         {
             _cardDeckController.getRandomCard();
         }

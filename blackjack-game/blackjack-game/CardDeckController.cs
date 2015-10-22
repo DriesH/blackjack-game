@@ -8,7 +8,6 @@ namespace blackjack_game
 {
   public class CardDeckController
   {
-
         CardDeckView _cardDeckView;
         public CardDeckModel _cardDeckModel;
         public int[] drawnCards;
