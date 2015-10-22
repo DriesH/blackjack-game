@@ -10,20 +10,16 @@ namespace blackjack_game
     {
         private int bettedMoney;
 
-        public int BettedMoney{
-
+        public int BettedMoney
+        {
             get
             {
                 return bettedMoney;
             }
-
             set
             {
                 bettedMoney = value;
             }
-
         }
-
-
     }
 }

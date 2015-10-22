@@ -70,6 +70,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StartResetController.cs" />
+    <Compile Include="StartResetModel.cs" />
+    <Compile Include="StartResetView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StartResetView.Designer.cs">
+      <DependentUpon>StartResetView.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="GameControl.resx">
       <DependentUpon>GameControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -88,6 +96,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StartResetView.resx">
+      <DependentUpon>StartResetView.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

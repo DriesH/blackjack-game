@@ -19,15 +19,26 @@ namespace blackjack_game
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //init
             PlayerController player1 = new PlayerController();
             PlayerBetController bet = new PlayerBetController(player1);
+            StartResetController startReset = new StartResetController();
+
+            //add
             Controls.Add(player1.getView());
             Controls.Add(bet.getView());
+            Controls.Add(startReset.getView());
 
-            int yPos = 0;
-                        
-            yPos = player1.getView().Height;
-            bet.getView().Location = new Point(0, yPos); 
+            //pos for bet view
+            int yPosBet = 0;
+            yPosBet = player1.getView().Height;
+            bet.getView().Location = new Point(0, yPosBet);
+
+            //pos for start reset view
+            int yPosStart = 0;
+            int xPosStart = 0;
+            xPosStart = player1.getView().Width;
+            startReset.getView().Location = new Point(xPosStart, 0); 
 
         }
     }

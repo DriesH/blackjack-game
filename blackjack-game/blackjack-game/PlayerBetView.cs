@@ -14,8 +14,6 @@ namespace blackjack_game
     {
         PlayerBetController _playerBetController;
         
-
-
         public PlayerBetView(PlayerBetController _controller)
         {
             _playerBetController = _controller;

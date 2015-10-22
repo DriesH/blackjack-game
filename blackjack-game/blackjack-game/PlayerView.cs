@@ -12,14 +12,14 @@ namespace blackjack_game
 {
     public partial class PlayerView : UserControl
     {
-        PlayerController _playercontroller;
+        PlayerController _playerController;
         public Label _lblKaarten;
         public Label _lblMoney;
 
 
         public PlayerView(PlayerController _controller)
         {
-            _playercontroller = _controller;
+            _playerController = _controller;
             InitializeComponent();
         }
 
