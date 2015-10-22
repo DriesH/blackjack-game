@@ -13,18 +13,13 @@ namespace blackjack_game
         public PlayerBetModel _playerBetModel;
         PlayerController _playerController;
         
-
-
         public PlayerBetController(PlayerController _controller)
         {
             _playerBetView = new PlayerBetView(this);
             _playerBetModel = new PlayerBetModel();
             _playerController = _controller;
-        }
-
-         
+        } 
         
-
         public PlayerBetView getView()
         {
             return _playerBetView;
