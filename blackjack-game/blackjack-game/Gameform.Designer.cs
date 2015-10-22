@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD:blackjack-game/blackjack-game/Gameform.Designer.cs
             this.SuspendLayout();
             // 
             // Form1
@@ -38,10 +39,36 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+=======
+            this.label1 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(239, 206);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Testetztzetz";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(548, 383);
+            this.Controls.Add(this.label1);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+>>>>>>> 8616b2c097cc4deb60705554e5e51042685c07ed:blackjack-game/blackjack-game/Form1.Designer.cs
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
     }
 }
 
