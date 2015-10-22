@@ -14,18 +14,16 @@ namespace blackjack_game
     {
         PlayerController _playercontroller;
 
-        public PlayerView(PlayerController _controller) {
-            _playercontroller = _controller;
-        }
-
-        public PlayerView()
+        public PlayerView(PlayerController _controller)
         {
+            _playercontroller = _controller;
             InitializeComponent();
         }
 
         private void PlayerView_Load(object sender, EventArgs e)
         {
-
+           
         }
+
     }
 }
