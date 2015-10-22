@@ -8,6 +8,7 @@ namespace blackjack_game
 {
   public class CardDeckController
   {
+        static int seeder = 0;
         CardDeckView _cardDeckView;
         public CardDeckModel _cardDeckModel;
         public List<int> drawnCards = new List<int>();
@@ -25,7 +26,8 @@ namespace blackjack_game
 
         public string getRandomCard()
         {
-            Random rnd = new Random();
+            
+            Random rnd = new Random(++seeder);
             int cardIndex = rnd.Next(0, 52);
             int sizeOfDrawnCards = drawnCards.Count();
 
