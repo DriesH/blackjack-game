@@ -1,2 +1,0 @@
-D:\blackjack-game\blackjack-game\blackjack-game\bin\Debug\blackjack-game.exe.config
-D:\KdG\Software Engineering\blackjack-game\blackjack-game\blackjack-game\bin\Debug\blackjack-game.exe.config
