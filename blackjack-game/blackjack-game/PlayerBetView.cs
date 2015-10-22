@@ -31,5 +31,10 @@ namespace blackjack_game
         {
             _playerBetController.Bet(txtBetMoney);
         }
+
+        private void txtBetMoney_Click(object sender, EventArgs e)
+        {
+            _playerBetController.ClearTxtBox(txtBetMoney);
+        }
     }
 }

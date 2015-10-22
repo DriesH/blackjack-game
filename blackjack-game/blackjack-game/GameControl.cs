@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace blackjack_game
 {
-    public partial class Form1 : Form
+    public partial class GameControl : Form
     {
-        public Form1()
+        public GameControl()
         {
             InitializeComponent();
         }
@@ -24,6 +24,10 @@ namespace blackjack_game
             Controls.Add(player1.getView());
             Controls.Add(bet.getView());
 
+            int yPos = 0;
+                        
+            yPos = player1.getView().Height;
+            bet.getView().Location = new Point(0, yPos); 
 
         }
     }

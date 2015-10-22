@@ -26,15 +26,16 @@ namespace blackjack_game
 
         }
 
-        public void Bet(TextBox txtBetMoney)
+        public void Bet(TextBox txtBox)
         {
-            if ( txtBetMoney.Text == "" )
+            if ( txtBox.Text == "" )
             {
+                txtBox.Text = "Please put in a value!";
                 return;
             }
             else
             {
-                int betMoneyValue = int.Parse(txtBetMoney.Text);
+                int betMoneyValue = int.Parse(txtBox.Text);
 
                 if (betMoneyValue < _playerController._playerModel.CurrentMoney)
                 { 
@@ -44,10 +45,16 @@ namespace blackjack_game
                 }
                 else
                 {
-                    txtBetMoney.Text = "Not enough money!";
+                    txtBox.Text = "Not enough money!";
                     return;
                 }
             }
         }
+
+        public void ClearTxtBox(TextBox txtBox)
+        {
+            txtBox.Clear();
+        }
+
     }
 }
