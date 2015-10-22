@@ -14,8 +14,6 @@ namespace blackjack_game
         public PlayerController() {
             _playerView = new PlayerView(this);
             _playerModel = new PlayerModel();
-<<<<<<< HEAD
-=======
         }
 
         public PlayerView getView()
@@ -24,8 +22,7 @@ namespace blackjack_game
         }
 
         public void updateMoney() {
-           
->>>>>>> 66657923081b2d5e4018c43ce78832bf5668d1bc
+            _playerView._lblKaarten.Text = _playerModel.CurrentMoney.ToString();
         }
 
     }

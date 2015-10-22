@@ -40,6 +40,7 @@
             this.lblMoney.Size = new System.Drawing.Size(58, 17);
             this.lblMoney.TabIndex = 0;
             this.lblMoney.Text = "Money: ";
+            this.lblMoney.Click += new System.EventHandler(this.lblMoney_Click);
             // 
             // lblKaarten
             // 
