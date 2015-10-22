@@ -24,12 +24,12 @@ namespace blackjack_game
 
         private void PlayerBetView_Load(object sender, EventArgs e)
         {
-            Controls.Add(_playerBetController.getView());
+            
         }
 
         private void btnBet_Click(object sender, EventArgs e)
         {
-
+            _playerBetController.Bet(txtBetMoney);
         }
     }
 }

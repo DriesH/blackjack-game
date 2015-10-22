@@ -33,22 +33,26 @@ namespace blackjack_game
 
         public void Bet(TextBox txtBetMoney)
         {
-            int betMoneyValue = int.Parse(txtBetMoney.Text); 
-
-            if ( txtBetMoney.Text == null )
+            if ( txtBetMoney.Text == "" )
             {
                 return;
             }
             else
             {
-               _playerBetModel.BettedMoney = _playerController._playerModel.CurrentMoney - betMoneyValue;
+                int betMoneyValue = int.Parse(txtBetMoney.Text);
 
+                if (betMoneyValue < _playerController._playerModel.CurrentMoney)
+                { 
+                    _playerBetModel.BettedMoney = betMoneyValue;
+                    _playerController._playerModel.CurrentMoney -= betMoneyValue;
+                    _playerController.updateMoney();
+                }
+                else
+                {
+                    txtBetMoney.Text = "Not enough money!";
+                    return;
+                }
             }
-
         }
-
-
-
-
     }
 }

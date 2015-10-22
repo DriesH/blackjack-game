@@ -20,7 +20,10 @@ namespace blackjack_game
         private void Form1_Load(object sender, EventArgs e)
         {
             PlayerController player1 = new PlayerController();
+            PlayerBetController bet = new PlayerBetController(player1);
             Controls.Add(player1.getView());
+            Controls.Add(bet.getView());
+
 
         }
     }
