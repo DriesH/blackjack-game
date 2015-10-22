@@ -49,6 +49,8 @@
     <Compile Include="CardDeckView.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="DealerController.cs" />
+    <Compile Include="DealerModel.cs" />
     <Compile Include="DealerView.cs">
       <SubType>UserControl</SubType>
     </Compile>

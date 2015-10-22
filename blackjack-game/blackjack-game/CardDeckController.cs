@@ -25,40 +25,36 @@ namespace blackjack_game
 
         public string getRandomCard()
         {
-          Random rnd = new Random();
-          int cardIndex = rnd.Next(0, 52);
-          int sizeOfDrawnCards = drawnCards.Count();
+            Random rnd = new Random();
+            int cardIndex = rnd.Next(0, 52);
+            int sizeOfDrawnCards = drawnCards.Count();
 
-          if (drawnCards != null)
-          {
+                   
             for (int i = 0; i < sizeOfDrawnCards; i++)
             {
-              if (drawnCards.Contains(cardIndex))
-              {
-                drawnCards.Add(cardIndex);
-                getRandomCard();
-              }
-              else
-              {
-                drawnCards.Add(cardIndex);
-                return _cardDeckModel.ArrCards[cardIndex];
-              }
+                if (drawnCards.Contains(cardIndex))
+                {
+                    drawnCards.Add(cardIndex);
+                    getRandomCard();
+                }
+                else
+                {
+                    drawnCards.Add(cardIndex);
+                    return _cardDeckModel.ArrCards[cardIndex];
+                }
             }
-          }
-          drawnCards.Add(cardIndex);
-          return _cardDeckModel.ArrCards[cardIndex];
+            drawnCards.Add(cardIndex);
+            return _cardDeckModel.ArrCards[cardIndex];
         }
 
         public void resetDrawnCards()
         {
             drawnCards.Clear();
-
         }
 
         public int getCardValue(string card, int currentTotal)
         {
-
-          return 709;
+            return 709;
         }
 
 

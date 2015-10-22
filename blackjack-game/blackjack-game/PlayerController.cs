@@ -33,5 +33,14 @@ namespace blackjack_game
         {
             _playerView._lblKaarten.Text = "Kaarten: " + _cardDeckController.getRandomCard();
         }
+
+        public void drawPlayerHand()
+        {
+            for (int counter = 0; counter < 2; counter++)
+            {
+                _playerModel.CurrentHand[counter] = _cardDeckController.getRandomCard();
+            }
+        }
+
     }
 }
