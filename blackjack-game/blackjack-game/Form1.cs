@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace blackjack_game
 {
-    public partial class Gameform : Form
+    public partial class Form1 : Form
     {
-        public Gameform()
+        public Form1()
         {
             InitializeComponent();
         }
