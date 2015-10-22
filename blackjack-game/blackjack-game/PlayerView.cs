@@ -26,7 +26,8 @@ namespace blackjack_game
         {
             _playerController.updateMoney();
             lblMoney.Text = _lblMoney.Text;
-            
+            _playerController.updateKaarten();
+
         }
 
 
