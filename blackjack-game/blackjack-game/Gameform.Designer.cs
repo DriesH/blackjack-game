@@ -1,6 +1,6 @@
 ﻿namespace blackjack_game
 {
-    partial class Form1
+    partial class Gameform
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD:blackjack-game/blackjack-game/Form1.Designer.cs
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -50,12 +51,39 @@
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
+=======
+            this.buttonDries = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // buttonDries
+            // 
+            this.buttonDries.Location = new System.Drawing.Point(50, 43);
+            this.buttonDries.Name = "buttonDries";
+            this.buttonDries.Size = new System.Drawing.Size(156, 95);
+            this.buttonDries.TabIndex = 0;
+            this.buttonDries.Text = "dries";
+            this.buttonDries.UseVisualStyleBackColor = true;
+            // 
+            // Gameform
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(274, 229);
+            this.Controls.Add(this.buttonDries);
+            this.Name = "Gameform";
+            this.Text = "Form1";
+            this.ResumeLayout(false);
+>>>>>>> a06eedc2b5c29ac4776cb0ba79559d5700ebb434:blackjack-game/blackjack-game/Gameform.Designer.cs
 
         }
 
         #endregion
 
+<<<<<<< HEAD:blackjack-game/blackjack-game/Form1.Designer.cs
         private System.Windows.Forms.Label label1;
+=======
+        private System.Windows.Forms.Button buttonDries;
+>>>>>>> a06eedc2b5c29ac4776cb0ba79559d5700ebb434:blackjack-game/blackjack-game/Gameform.Designer.cs
     }
 }
 
