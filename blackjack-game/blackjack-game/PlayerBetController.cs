@@ -11,7 +11,7 @@ namespace blackjack_game
     {
         PlayerBetView _playerBetView;
         public PlayerBetModel _playerBetModel;
-        PlayerController _playerController;
+        public PlayerController _playerController;
         
         public PlayerBetController(PlayerController _controller)
         {
@@ -41,17 +41,13 @@ namespace blackjack_game
                     betMoneyValue = int.Parse(txtBox.Text);
                     _playerBetModel.MoneyInPot += betMoneyValue;
                     
-                    if (betMoneyValue < _playerController._playerModel.CurrentMoney)
+                    if (betMoneyValue <= _playerController._playerModel.CurrentMoney)
                     {
                         _playerBetModel.BettedMoney = betMoneyValue;
                         _playerController._playerModel.CurrentMoney -= betMoneyValue;
                         _playerController.updateMoney();
                     }
-                    else
-                    {
-                        txtBox.Text = "Not enough money!";
-                        return;
-                    }
+                    
                 }
             }
         }

@@ -13,8 +13,16 @@ namespace blackjack_game
     public partial class PlayerView : UserControl
     {
         PlayerController _playerController;
-        public Label _lblKaarten = new Label();
-        public Label _lblMoney = new Label();
+        public Label _lblMoney {
+            get { return lblMoney; }
+            set { lblMoney = value; }
+        }
+
+        public Label _lblKaarten
+        {
+            get { return lblKaarten; }
+            set { lblKaarten = value; }
+        }
 
         public PlayerView(PlayerController _controller)
         {
