@@ -28,6 +28,7 @@ namespace blackjack_game
         private void btnBet_Click(object sender, EventArgs e)
         {
             _playerBetController.Bet(txtBetMoney);
+            _playerBetController.putMoneyInPut(lblMoneyPot);
         }
 
         private void txtBetMoney_Click(object sender, EventArgs e)
