@@ -27,8 +27,24 @@ namespace blackjack_game
 
         private void btnBet_Click(object sender, EventArgs e)
         {
-            _playerBetController.Bet(txtBetMoney);
-            _playerBetController.putMoneyInPut(lblMoneyPot);
+            int textBoxValue;
+            if (int.TryParse(txtBetMoney.Text, out textBoxValue))
+            {
+
+
+                if (_playerBetController._playerController._playerModel.CurrentMoney >= int.Parse(txtBetMoney.Text))
+                {
+                    _playerBetController.Bet(txtBetMoney);
+                    _playerBetController.putMoneyInPut(lblMoneyPot);
+                }
+                else
+                {
+                    txtBetMoney.Text = "Not enough money!";
+                    return;
+                }
+            }
+
+            Console.WriteLine(_playerBetController._playerController._playerModel.CurrentMoney);
         }
 
         private void txtBetMoney_Click(object sender, EventArgs e)
