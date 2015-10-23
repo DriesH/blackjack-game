@@ -23,7 +23,6 @@ namespace blackjack_game
         public PlayerBetView getView()
         {
             return _playerBetView;
-
         }
 
         public void Bet(TextBox txtBox)
