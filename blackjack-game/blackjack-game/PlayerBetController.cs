@@ -28,25 +28,31 @@ namespace blackjack_game
 
         public void Bet(TextBox txtBox)
         {
-            if ( txtBox.Text == "" )
+            int betMoneyValue;
+
+            if (txtBox.Text == "")
             {
                 txtBox.Text = "Please put in a value!";
                 return;
             }
             else
             {
-                int betMoneyValue = int.Parse(txtBox.Text);
-
-                if (betMoneyValue < _playerController._playerModel.CurrentMoney)
-                { 
-                    _playerBetModel.BettedMoney = betMoneyValue;
-                    _playerController._playerModel.CurrentMoney -= betMoneyValue;
-                    _playerController.updateMoney();
-                }
-                else
+                if (int.TryParse(txtBox.Text, out betMoneyValue))
                 {
-                    txtBox.Text = "Not enough money!";
-                    return;
+                    betMoneyValue = int.Parse(txtBox.Text);
+                    _playerBetModel.MoneyInPot += betMoneyValue;
+                    
+                    if (betMoneyValue < _playerController._playerModel.CurrentMoney)
+                    {
+                        _playerBetModel.BettedMoney = betMoneyValue;
+                        _playerController._playerModel.CurrentMoney -= betMoneyValue;
+                        _playerController.updateMoney();
+                    }
+                    else
+                    {
+                        txtBox.Text = "Not enough money!";
+                        return;
+                    }
                 }
             }
         }
@@ -55,6 +61,12 @@ namespace blackjack_game
         {
             txtBox.Clear();
         }
+
+        public void putMoneyInPut(Label label)
+        {
+            label.Text = "Money in pot: " + _playerBetModel.MoneyInPot.ToString();
+        }
+
 
     }
 }

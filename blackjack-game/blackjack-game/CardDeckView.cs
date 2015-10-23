@@ -27,7 +27,6 @@ namespace blackjack_game
 
         private void btnDrawCard_Click(object sender, EventArgs e)
         {
-            
             _cardDeckController.getRandomCard();
         }
     }
