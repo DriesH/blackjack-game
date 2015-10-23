@@ -12,22 +12,24 @@ namespace blackjack_game
 {
     public partial class PlayerView : UserControl
     {
-        PlayerController _playercontroller;
-        public Label _lblKaarten;
-        public Label _lblMoney;
-
+        PlayerController _playerController;
+        public Label _lblKaarten = new Label();
+        public Label _lblMoney = new Label();
 
         public PlayerView(PlayerController _controller)
         {
-            _playercontroller = _controller;
+            _playerController = _controller;
             InitializeComponent();
         }
 
         private void PlayerView_Load(object sender, EventArgs e)
         {
-            _lblKaarten = lblKaarten;
-            _lblMoney = lblMoney;  
+            _playerController.updateMoney();
+            lblMoney.Text = _lblMoney.Text;
+            _playerController.updateKaarten();
+
         }
+
 
     }
 }
