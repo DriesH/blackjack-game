@@ -10,13 +10,22 @@ namespace blackjack_game
     {
         PlayerView _playerView;
         CardDeckController _cardDeckController;
+        StartResetController _startResetController;
         public PlayerModel _playerModel;
 
-        public PlayerController()
+        //public PlayerController()
+        //{
+        //    _cardDeckController = new CardDeckController();
+        //    _playerView = new PlayerView(this);
+        //    _playerModel = new PlayerModel();
+        //}
+
+        public PlayerController(StartResetController _controller)
         {
             _cardDeckController = new CardDeckController();
             _playerView = new PlayerView(this);
             _playerModel = new PlayerModel();
+            _startResetController = _controller;
         }
 
         public PlayerView getView()
@@ -26,12 +35,18 @@ namespace blackjack_game
 
         public void updateMoney()
         {
-            _playerView._lblMoney.Text = "Money: " + _playerModel.CurrentMoney.ToString();
+            if (_startResetController._startResetModel.GameStarted)
+            {
+                _playerView._lblMoney.Text = "Money: " + _playerModel.CurrentMoney.ToString();
+            }
         }
 
         public void updateKaarten()
         {
-            _playerView._lblKaarten.Text = "Kaarten: " + _cardDeckController.getRandomCard();
+            //if (_startResetController._startResetModel.GameStarted)
+            //{
+                _playerView._lblKaarten.Text = "Kaarten: " + _cardDeckController.getRandomCard();
+            //}
         }
 
         public void drawPlayerHand()
