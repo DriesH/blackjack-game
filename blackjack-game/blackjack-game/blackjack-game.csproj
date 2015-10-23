@@ -46,11 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="CardDeckView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DealerController.cs" />
+    <Compile Include="DealerModel.cs" />
+    <Compile Include="DealerView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DealerView.Designer.cs">
+      <DependentUpon>DealerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameControl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="GameControl.Designer.cs">
+      <DependentUpon>GameControl.cs</DependentUpon>
     </Compile>
     <Compile Include="PlayerBetController.cs" />
     <Compile Include="PlayerBetModel.cs" />
@@ -59,6 +70,11 @@
     </Compile>
     <Compile Include="PlayerBetView.Designer.cs">
       <DependentUpon>PlayerBetView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CardDeckController.cs" />
+    <Compile Include="CardDeckModel.cs" />
+    <Compile Include="CardDeckView.Designer.cs">
+      <DependentUpon>CardDeckView.cs</DependentUpon>
     </Compile>
     <Compile Include="PlayerController.cs" />
     <Compile Include="PlayerModel.cs" />
@@ -70,8 +86,19 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="StartResetController.cs" />
+    <Compile Include="StartResetModel.cs" />
+    <Compile Include="StartResetView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StartResetView.Designer.cs">
+      <DependentUpon>StartResetView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CardDeckView.resx">
+      <DependentUpon>CardDeckView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameControl.resx">
+      <DependentUpon>GameControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlayerBetView.resx">
       <DependentUpon>PlayerBetView.cs</DependentUpon>
@@ -88,6 +115,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StartResetView.resx">
+      <DependentUpon>StartResetView.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
