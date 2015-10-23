@@ -31,6 +31,7 @@
             this.btnBet = new System.Windows.Forms.Button();
             this.txtBetMoney = new System.Windows.Forms.TextBox();
             this.lblBetMoney = new System.Windows.Forms.Label();
+            this.lblMoneyPot = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnBet
@@ -60,15 +61,25 @@
             this.lblBetMoney.TabIndex = 2;
             this.lblBetMoney.Text = "Bet money:";
             // 
+            // lblMoneyPot
+            // 
+            this.lblMoneyPot.AutoSize = true;
+            this.lblMoneyPot.Location = new System.Drawing.Point(364, 65);
+            this.lblMoneyPot.Name = "lblMoneyPot";
+            this.lblMoneyPot.Size = new System.Drawing.Size(148, 25);
+            this.lblMoneyPot.TabIndex = 3;
+            this.lblMoneyPot.Text = "Money in pot: ";
+            // 
             // PlayerBetView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblMoneyPot);
             this.Controls.Add(this.lblBetMoney);
             this.Controls.Add(this.txtBetMoney);
             this.Controls.Add(this.btnBet);
             this.Name = "PlayerBetView";
-            this.Size = new System.Drawing.Size(315, 240);
+            this.Size = new System.Drawing.Size(656, 240);
             this.Load += new System.EventHandler(this.PlayerBetView_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -80,5 +91,6 @@
         private System.Windows.Forms.Button btnBet;
         private System.Windows.Forms.TextBox txtBetMoney;
         private System.Windows.Forms.Label lblBetMoney;
+        private System.Windows.Forms.Label lblMoneyPot;
     }
 }

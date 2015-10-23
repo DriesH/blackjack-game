@@ -26,12 +26,10 @@ namespace blackjack_game
 
         public string getRandomCard()
         {
-            
             Random rnd = new Random(++seeder);
             int cardIndex = rnd.Next(0, 52);
             int sizeOfDrawnCards = drawnCards.Count();
-
-                   
+                               
             for (int i = 0; i < sizeOfDrawnCards; i++)
             {
                 if (drawnCards.Contains(cardIndex))
@@ -58,7 +56,5 @@ namespace blackjack_game
         {
             return 709;
         }
-
-
   }
 }
