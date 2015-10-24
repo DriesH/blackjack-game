@@ -30,7 +30,7 @@ namespace blackjack_game
           //shuffle deck/set boolean gamestarted on true/draw the player his first 2 cards
           _startResetController._cardDeckController.shuffle();
           _startResetController._playerController.drawPlayerHand();
-            _startResetController._dealerController.drawDealerHand();
+          _startResetController._dealerController.drawDealerHand();
           _startResetController.StartGame(btnStart);
 
             //set enabled

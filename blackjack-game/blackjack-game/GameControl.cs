@@ -59,7 +59,7 @@ namespace blackjack_game
             //pos for dealer
             int xPosDealer = 0;
             xPosDealer = cards.getView().Width + startReset.getView().Width ;
-            dealer.getView().Location = new Point(xPosDealer+5, 0);
+            dealer.getView().Location = new Point(xPosDealer + 20, 0);
 
 
         }

@@ -40,14 +40,14 @@ namespace blackjack_game
 
         public void updateKaarten()
         {
-            _playerView._lblKaarten.Text = "Kaarten: " + _cardDeckController.getRandomCard();
+            _playerView._lblKaarten.Text = "Kaarten: " + _cardDeckController.getRandomCard("player");
         }
 
         public void drawPlayerHand()
         {
             for (int counter = 0; counter < 2; counter++)
             {
-                _playerModel.CurrentPlayerHand[counter] = _cardDeckController.getRandomCard();
+                _playerModel.CurrentPlayerHand[counter] = _cardDeckController.getRandomCard("player");
             }
         }
 
