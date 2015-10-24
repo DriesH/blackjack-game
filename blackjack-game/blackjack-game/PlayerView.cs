@@ -32,9 +32,9 @@ namespace blackjack_game
 
         private void PlayerView_Load(object sender, EventArgs e)
         {
-            _playerController.updateMoney();
-            lblMoney.Text = _lblMoney.Text;
-            _playerController.updateKaarten();
+            //_playerController.updateMoney();
+            //lblMoney.Text = _lblMoney.Text;
+            //_playerController.updateKaarten();
 
         }
 

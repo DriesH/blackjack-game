@@ -10,14 +10,16 @@ namespace blackjack_game
     public class StartResetController
     {
         StartResetView _startResetView;
-        CardDeckController _cardDeckController;
+        public CardDeckController _cardDeckController;
         public StartResetModel _startResetModel;
+        public PlayerController _playerController;
 
-        public StartResetController(CardDeckController _controller)
+        public StartResetController(CardDeckController _cdController, PlayerController _pController)
         {
-            _cardDeckController = _controller;
+            _cardDeckController = _cdController;
             _startResetView = new StartResetView(this);
             _startResetModel = new StartResetModel();
+            _playerController = _pController;
         }
 
         public StartResetView getView()
