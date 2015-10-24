@@ -20,12 +20,12 @@ namespace blackjack_game
         //    _playerModel = new PlayerModel();
         //}
 
-        public PlayerController(StartResetController _controller)
+        public PlayerController(StartResetController _srController, CardDeckController _cdController )
         {
-            _cardDeckController = new CardDeckController();
+            _cardDeckController = _cdController;
             _playerView = new PlayerView(this);
             _playerModel = new PlayerModel();
-            _startResetController = _controller;
+            _startResetController = _srController;
         }
 
         public PlayerView getView()
