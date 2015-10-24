@@ -26,7 +26,7 @@ namespace blackjack_game
 
         public void GiveDealerCards()
         {
-            _cardDeckController.getRandomCard();
+          _cardDeckController.getRandomCard();
 
         }
         
