@@ -12,7 +12,11 @@ namespace blackjack_game
 {
     public partial class GameControl : Form
     {
-        //bool isPlayerTurn = true; 
+        //bool isPlayerTurn = true;
+      PlayerController player1;
+      CardDeckController cards;
+      StartResetController startReset;
+      PlayerBetController bet;
 
         public GameControl()
         {
@@ -22,10 +26,11 @@ namespace blackjack_game
         private void Form1_Load(object sender, EventArgs e)
         {
             //init
-            CardDeckController cards = new CardDeckController();
-            StartResetController startReset = new StartResetController(cards);
-            PlayerController player1 = new PlayerController(startReset);
-            PlayerBetController bet = new PlayerBetController(player1);
+            cards = new CardDeckController();
+            player1 = new PlayerController(startReset, cards);
+            bet = new PlayerBetController(player1);
+            startReset = new StartResetController(cards, player1, bet);
+            
             
             //add
             Controls.Add(player1.getView());
@@ -41,7 +46,7 @@ namespace blackjack_game
             //pos for start reset view
             int xPosStart = 0;
             xPosStart = player1.getView().Width;
-            startReset.getView().Location = new Point(xPosStart, 0);
+            startReset.getView().Location = new Point(xPosStart + 50, 0);
 
             //pos for cards
             int yPosCards = 0;

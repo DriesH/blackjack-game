@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace blackjack_game
 {
@@ -14,11 +15,21 @@ namespace blackjack_game
                           "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "RJ", "RQ", "RK", "RA",
                           "K2", "K3", "K4", "K5", "K6", "K7", "K8", "K9", "K10", "KJ", "KQ", "KK", "KA"};
 
+    string[] shuffledDeck;
+    
+
+
+
     public string[] ArrCards
     {
       get { return arrCards; }
-      set { arrCards = value;  }
+      set { arrCards = value; }
     }
 
+    public string[] ShuffledDeck
+    {
+      get { return shuffledDeck; }
+      set { shuffledDeck = value; }
+    }
   }
 }
