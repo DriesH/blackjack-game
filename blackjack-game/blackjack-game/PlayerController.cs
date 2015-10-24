@@ -35,18 +35,12 @@ namespace blackjack_game
 
         public void updateMoney()
         {
-            if (_startResetController._startResetModel.GameStarted)
-            {
-                _playerView._lblMoney.Text = "Money: " + _playerModel.CurrentMoney.ToString();
-            }
+            _playerView._lblMoney.Text = "Money: " + _playerModel.CurrentMoney.ToString();
         }
 
         public void updateKaarten()
         {
-            //if (_startResetController._startResetModel.GameStarted)
-            //{
-                _playerView._lblKaarten.Text = "Kaarten: " + _cardDeckController.getRandomCard();
-            //}
+            _playerView._lblKaarten.Text = "Kaarten: " + _cardDeckController.getRandomCard();
         }
 
         public void drawPlayerHand()

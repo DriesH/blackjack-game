@@ -28,9 +28,9 @@ namespace blackjack_game
             //init
             cards = new CardDeckController();
             player1 = new PlayerController(startReset, cards);
-            startReset = new StartResetController(cards, player1);
             bet = new PlayerBetController(player1);
-            
+            startReset = new StartResetController(cards, player1, bet);
+         
             //add
             Controls.Add(player1.getView());
             Controls.Add(bet.getView());
@@ -45,7 +45,7 @@ namespace blackjack_game
             //pos for start reset view
             int xPosStart = 0;
             xPosStart = player1.getView().Width;
-            startReset.getView().Location = new Point(xPosStart, 0);
+            startReset.getView().Location = new Point(xPosStart + 50, 0);
 
             //pos for cards
             int yPosCards = 0;

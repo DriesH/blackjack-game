@@ -13,7 +13,33 @@ namespace blackjack_game
     public partial class PlayerBetView : UserControl
     {
         PlayerBetController _playerBetController;
-        
+
+        public Button _btnBet 
+        {
+            get
+            {
+                return btnBet;
+            }
+            set
+            {
+                btnBet = value;
+            }
+        }
+
+        public TextBox _txtBetMoney
+        {
+            get
+            {
+                return txtBetMoney;
+            }
+            set
+            {
+                txtBetMoney = value;
+            }
+        }
+
+
+
         public PlayerBetView(PlayerBetController _controller)
         {
             _playerBetController = _controller;
@@ -22,7 +48,8 @@ namespace blackjack_game
 
         private void PlayerBetView_Load(object sender, EventArgs e)
         {
-            
+            _txtBetMoney.Enabled = false;
+            _btnBet.Enabled = false;
         }
 
         private void btnBet_Click(object sender, EventArgs e)
@@ -30,8 +57,6 @@ namespace blackjack_game
             int textBoxValue;
             if (int.TryParse(txtBetMoney.Text, out textBoxValue))
             {
-
-
                 if (_playerBetController._playerController._playerModel.CurrentMoney >= int.Parse(txtBetMoney.Text))
                 {
                     _playerBetController.Bet(txtBetMoney);

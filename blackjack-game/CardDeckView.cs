@@ -14,33 +14,7 @@ namespace blackjack_game
   {
     CardDeckController _cardDeckController;
 
-    public Button _BtnDrawCard
-    {
-        get
-        {
-            return btnDrawCard;
-        }
-        set
-        {
-            btnDrawCard = value;
-        }
-    }
-
-    public Button _BtnStop
-    {
-        get
-        {
-            return btnStop;
-        }
-        set
-        {
-            btnStop = value;
-        }
-    }
-
-
-
-        public CardDeckView(CardDeckController _controller)
+    public CardDeckView(CardDeckController _controller)
     {
       _cardDeckController = _controller;
       InitializeComponent();
@@ -48,8 +22,7 @@ namespace blackjack_game
 
     private void CardDeckView_Load(object sender, EventArgs e)
     {
-          btnDrawCard.Enabled = false;
-          btnStop.Enabled = false;
+
     }
 
     private void btnDrawCard_Click(object sender, EventArgs e)
