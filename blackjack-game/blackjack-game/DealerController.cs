@@ -14,8 +14,8 @@ namespace blackjack_game
      
         public DealerController()
         {
-            _dealerModel = new DealerModel();
-            _dealerView = new DealerView();
+            _dealerModel        = new DealerModel();
+            _dealerView         = new DealerView();
             _cardDeckController = new CardDeckController();
         }
 

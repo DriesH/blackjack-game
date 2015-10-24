@@ -13,25 +13,23 @@ namespace blackjack_game
     public partial class StartResetView : UserControl
     {
         StartResetController _startResetController;
-        PlayerController _playerController = new PlayerController();
 
         public StartResetView(StartResetController _controller)
         {
             _startResetController = _controller;
-
             InitializeComponent();
         }
 
         private void StartResetView_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            _startResetController.StartGame(btnStart);
-            _playerController.drawPlayerHand();
-
+          _startResetController._cardDeckController.shuffle();
+          _startResetController.StartGame(btnStart);
+          _startResetController._playerController.drawPlayerHand();
         }
 
         private void btnRestart_Click(object sender, EventArgs e)

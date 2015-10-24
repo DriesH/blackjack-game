@@ -28,10 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.lblDealerCards = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // lblDealerCards
+            // 
+            this.lblDealerCards.AutoSize = true;
+            this.lblDealerCards.Location = new System.Drawing.Point(38, 57);
+            this.lblDealerCards.Name = "lblDealerCards";
+            this.lblDealerCards.Size = new System.Drawing.Size(93, 25);
+            this.lblDealerCards.TabIndex = 0;
+            this.lblDealerCards.Text = "Kaarten:";
+            // 
+            // DealerView
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblDealerCards);
+            this.Name = "DealerView";
+            this.Size = new System.Drawing.Size(374, 145);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblDealerCards;
     }
 }

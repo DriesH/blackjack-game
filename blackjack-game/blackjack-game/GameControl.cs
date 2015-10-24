@@ -12,6 +12,12 @@ namespace blackjack_game
 {
     public partial class GameControl : Form
     {
+        //bool isPlayerTurn = true;
+      PlayerController player1;
+      CardDeckController cards;
+      StartResetController startReset;
+      PlayerBetController bet;
+
         public GameControl()
         {
             InitializeComponent();
@@ -20,13 +26,11 @@ namespace blackjack_game
         private void Form1_Load(object sender, EventArgs e)
         {
             //init
-            PlayerController player1 = new PlayerController();
-            PlayerBetController bet = new PlayerBetController(player1);
-            CardDeckController cards = new CardDeckController();
-            StartResetController startReset = new StartResetController(cards);
-
-
-
+            cards = new CardDeckController();
+            player1 = new PlayerController(startReset, cards);
+            startReset = new StartResetController(cards, player1);
+            bet = new PlayerBetController(player1);
+            
             //add
             Controls.Add(player1.getView());
             Controls.Add(bet.getView());
