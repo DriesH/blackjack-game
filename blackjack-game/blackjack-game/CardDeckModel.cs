@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace blackjack_game
 {
@@ -15,6 +16,12 @@ namespace blackjack_game
                           "K2", "K3", "K4", "K5", "K6", "K7", "K8", "K9", "K10", "KJ", "KQ", "KK", "KA"};
 
     string[] shuffledDeck;
+<<<<<<< HEAD:blackjack-game/blackjack-game/blackjack-game/CardDeckModel.cs
+    
+
+
+=======
+>>>>>>> b0bbbec04703bb3d34d21ddc9029c45686ed6343:blackjack-game/blackjack-game/CardDeckModel.cs
 
     public string[] ArrCards
     {
