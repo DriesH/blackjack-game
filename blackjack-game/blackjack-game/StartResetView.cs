@@ -13,7 +13,6 @@ namespace blackjack_game
     public partial class StartResetView : UserControl
     {
         StartResetController _startResetController;
-        PlayerController _playerController;
 
         public StartResetView(StartResetController _controller)
         {
@@ -23,16 +22,14 @@ namespace blackjack_game
 
         private void StartResetView_Load(object sender, EventArgs e)
         {
-            _playerController = new PlayerController(_startResetController);
+            
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            _startResetController.StartGame(btnStart);
-            _playerController.drawPlayerHand();
-            //_playerController.updateMoney();
-            //_playerController.updateKaarten();
-            _playerController.getView()._lblMoney.Text = "Money: JOREN";
+          _startResetController._cardDeckController.shuffle();
+          _startResetController.StartGame(btnStart);
+          _startResetController._playerController.drawPlayerHand();
         }
 
         private void btnRestart_Click(object sender, EventArgs e)
