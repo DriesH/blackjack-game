@@ -9,6 +9,7 @@ namespace blackjack_game
     public class PlayerBetModel
     {
         private int bettedMoney;
+        private int moneyInPot;
 
         public int BettedMoney
         {
@@ -19,6 +20,18 @@ namespace blackjack_game
             set
             {
                 bettedMoney = value;
+            }
+        }
+
+        public int MoneyInPot
+        {
+            get
+            {
+                return moneyInPot;
+            }
+            set
+            {
+                moneyInPot = value;
             }
         }
     }

@@ -97,6 +97,9 @@
     <EmbeddedResource Include="CardDeckView.resx">
       <DependentUpon>CardDeckView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DealerView.resx">
+      <DependentUpon>DealerView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GameControl.resx">
       <DependentUpon>GameControl.cs</DependentUpon>
     </EmbeddedResource>
