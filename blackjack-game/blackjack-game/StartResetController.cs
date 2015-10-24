@@ -35,10 +35,8 @@ namespace blackjack_game
         {
             _playerController.getView()._lblMoney.Text = "Money: ";
             _playerController.getView()._lblKaarten.Text = "Kaarten: ";
-
         }
-
-
+        
         public void StartGame(Button start)
         {
             //init
@@ -66,9 +64,6 @@ namespace blackjack_game
             {
                 _dealerController.getView()._lblDealerCards.Text += " " + currentDealerHand[i];
             }
-
-
-
         }
 
         public void ResetGame(Button start)

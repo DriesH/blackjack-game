@@ -13,11 +13,11 @@ namespace blackjack_game
     public partial class GameControl : Form
     {
         //bool isPlayerTurn = true;
-      PlayerController player1;
-      CardDeckController cards;
-      StartResetController startReset;
-      PlayerBetController bet;
-      DealerController dealer;
+        PlayerController player1;
+        CardDeckController cards;
+        StartResetController startReset;
+        PlayerBetController bet;
+        DealerController dealer;
 
         public GameControl()
         {
@@ -33,7 +33,6 @@ namespace blackjack_game
             dealer = new DealerController(cards);
             startReset = new StartResetController(cards, player1, bet, dealer);
             
-         
             //add
             Controls.Add(player1.getView());
             Controls.Add(bet.getView());
@@ -58,10 +57,8 @@ namespace blackjack_game
 
             //pos for dealer
             int xPosDealer = 0;
-            xPosDealer = cards.getView().Width + startReset.getView().Width ;
+            xPosDealer = cards.getView().Width + startReset.getView().Width;
             dealer.getView().Location = new Point(xPosDealer + 20, 0);
-
-
         }
     }
 }

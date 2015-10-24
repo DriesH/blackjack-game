@@ -37,9 +37,7 @@ namespace blackjack_game
                 btnStop = value;
             }
         }
-
-
-
+        
         public CardDeckView(CardDeckController _controller)
         {
             _cardDeckController = _controller;
@@ -60,9 +58,10 @@ namespace blackjack_game
 
         private void btnStop_Click(object sender, EventArgs e)
         {
-
-
+            if (_cardDeckController._cardDeckModel.CurrentDealerTotal < 16)
+            {
+                
+            }
         }
     }
 }
-
