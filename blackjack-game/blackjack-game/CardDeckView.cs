@@ -54,9 +54,11 @@ namespace blackjack_game
 
     private void btnDrawCard_Click(object sender, EventArgs e)
     {
-      _cardDeckController.getRandomCard();
-      //_cardDeckController.bustCheck();
-    }
+            _cardDeckController.getRandomCard();
+            //_cardDeckController.bustCheck();
+            
+
+        }
 
     private void btnStop_Click(object sender, EventArgs e)
     {

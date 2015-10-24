@@ -17,7 +17,6 @@ namespace blackjack_game
     public int totalValue = 0;
     public bool bust = false;
 
-
     public CardDeckController()
     {
       _cardDeckView = new CardDeckView(this);
