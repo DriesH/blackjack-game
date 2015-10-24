@@ -7,112 +7,141 @@ using System.Threading.Tasks;
 
 namespace blackjack_game
 {
-    public class CardDeckController
+  public class CardDeckController
+  {
+    CardDeckView _cardDeckView;
+    public CardDeckModel _cardDeckModel;
+    public int teller = 0;
+    public int ElevenCounter = 0;
+    public string[] shuffledDeck;
+    public int totalValue = 0;
+    public bool bust = false;
+
+    public CardDeckController()
     {
-        CardDeckView _cardDeckView;
-        public CardDeckModel _cardDeckModel;
-        public List<int> drawnCards = new List<int>();
+      _cardDeckView = new CardDeckView(this);
+      _cardDeckModel = new CardDeckModel();
+    }
 
-        public CardDeckController()
+    public CardDeckView getView()
+    {
+      return _cardDeckView;
+    }
+
+    public string[] shuffle()
+    {
+      Random rnd = new Random();
+      _cardDeckModel.ArrCards = _cardDeckModel.ArrCards.OrderBy(x => rnd.Next()).ToArray();
+      return shuffledDeck;
+    }
+
+    public string getRandomCard()
+    {
+      string drawCard = _cardDeckModel.ArrCards[teller];
+      Console.WriteLine(drawCard);
+      getCardValue(drawCard);
+      bustCheck();
+      teller++;
+      return drawCard;
+    }
+
+    public void resetDrawnCards()
+    {
+      teller = 0;
+    }
+
+    public void getCardValue(string card)
+    {
+      string lastChar = card.Substring(card.Length - 1, 1);
+
+      switch (lastChar)
+      {
+        case "2":
+          addCurrentTotal(2);
+          break;
+        case "3":
+          addCurrentTotal(3);
+          break;
+        case "4":
+          addCurrentTotal(4);
+          break;
+        case "5":
+          addCurrentTotal(5);
+          break;
+        case "6":
+          addCurrentTotal(6);
+          break;
+        case "7":
+          addCurrentTotal(7);
+          break;
+        case "8":
+          addCurrentTotal(8);
+          break;
+        case "9":
+          addCurrentTotal(9);
+          break;
+        case "0":
+          addCurrentTotal(10);
+          break;
+        case "J":
+          addCurrentTotal(10);
+          break;
+        case "Q":
+          addCurrentTotal(10);
+          break;
+        case "K":
+          addCurrentTotal(10);
+          break;
+        case "A":
+          if(totalValue <= 10)
+          {
+            addCurrentTotal(11);
+            ElevenCounter++;
+            break;
+          }
+          else
+          {
+            addCurrentTotal(1);
+            break;
+          };
+        default:
+          Console.WriteLine("Oops! Something went wrong ;(");
+          break;
+      }
+    }
+
+    public void addCurrentTotal(int addTotal)
+    {
+      totalValue += addTotal;
+    }
+
+    public int getCurrentTotal()
+    {
+      return totalValue;
+    }
+
+    public void bustCheck()
+    {
+      if (totalValue > 21)
+      {
+        if (ElevenCounter == 0)
         {
-            _cardDeckView = new CardDeckView(this);
-            _cardDeckModel = new CardDeckModel();
-        }
+          Console.WriteLine("BUSTED NJIIIGAAAA");
 
-        public CardDeckView getView()
+          Console.WriteLine(totalValue);
+
+          bust = true;
+        }
+        else
         {
-            return _cardDeckView;
+          totalValue -= 10;
+          ElevenCounter--;
+          bustCheck();
         }
+      }
 
-        //********************STATIC HELPER CLASS************************//
-
-
-        public static class StaticRandom
-        {
-            private static int seed;
-
-            private static ThreadLocal<Random> threadLocal = new ThreadLocal<Random>
-                (() => new Random(Interlocked.Increment(ref seed)));
-
-            static StaticRandom()
-            {
-                seed = Environment.TickCount;
-            }
-
-            public static Random Instance { get { return threadLocal.Value; } }
-        }
-
-
-        //****************************************************************//
-
-
-        public string getRandomCard()
-        {
-
-            int cardIndex = StaticRandom.Instance.Next(0, 52);
-            int sizeOfDrawnCards = drawnCards.Count();
-
-
-            for (int i = 0; i < sizeOfDrawnCards; i++)
-            {
-                if (drawnCards.Contains(cardIndex))
-                {
-                    drawnCards.Add(cardIndex);
-                    getRandomCard();
-                }
-                else
-                {
-                    drawnCards.Add(cardIndex);
-                    return _cardDeckModel.ArrCards[cardIndex];
-                }
-            }
-            drawnCards.Add(cardIndex);
-            return _cardDeckModel.ArrCards[cardIndex];
-        }
-
-        public void resetDrawnCards()
-        {
-            drawnCards.Clear();
-        }
-
-        public int getCardValue(string card, int currentTotal)
-        {
-            string lastChar = card.Substring(card.Length - 1, 1);
-
-            switch (lastChar)
-            {
-                case "2":
-                    return 2;
-                case "3":
-                    return 3;
-                case "4":
-                    return 4;
-                case "5":
-                    return 5;
-                case "6":
-                    return 6;
-                case "7":
-                    return 7;
-                case "8":
-                    return 8;
-                case "9":
-                    return 9;
-                case "0":
-                    return 10;
-                case "J":
-                    return 10; ;
-                case "Q":
-                    return 10;
-                case "K":
-                    return 10;
-                case "A":
-                    return 11;
-                default:
-                    Console.WriteLine("Oops! Something went wrong ;(");
-                    return 0;
-            }
-        }
-
+      Console.WriteLine(totalValue);
 
     }
+  }
 }

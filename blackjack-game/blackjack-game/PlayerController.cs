@@ -9,15 +9,24 @@ namespace blackjack_game
     public class PlayerController
     {
         PlayerView _playerView;
-        CardDeckController _cardDeckController;
+        public CardDeckController _cardDeckController;
         public PlayerModel _playerModel;
 
-        public PlayerController()
+        //public PlayerController()
+        //{
+        //    _cardDeckController = new CardDeckController();
+        //    _playerView = new PlayerView(this);
+        //    _playerModel = new PlayerModel();
+        //}
+
+        public PlayerController(CardDeckController _cdController )
         {
-            _cardDeckController = new CardDeckController();
+            _cardDeckController = _cdController;
             _playerView = new PlayerView(this);
             _playerModel = new PlayerModel();
         }
+
+
 
         public PlayerView getView()
         {
@@ -38,9 +47,10 @@ namespace blackjack_game
         {
             for (int counter = 0; counter < 2; counter++)
             {
-                _playerModel.CurrentHand[counter] = _cardDeckController.getRandomCard();
+                _playerModel.CurrentPlayerHand[counter] = _cardDeckController.getRandomCard();
             }
         }
+
 
     }
 }
