@@ -33,6 +33,8 @@ namespace blackjack_game
             //_playerController.updateMoney();
             //_playerController.updateKaarten();
             _playerController.getView()._lblMoney.Text = "Money: JOREN";
+            _startResetController._cardDeckController.shuffleDeck();
+
         }
 
         private void btnRestart_Click(object sender, EventArgs e)

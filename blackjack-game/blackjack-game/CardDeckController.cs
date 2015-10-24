@@ -9,9 +9,10 @@ namespace blackjack_game
 {
     public class CardDeckController
     {
+        int teller = 0;
         CardDeckView _cardDeckView;
         public CardDeckModel _cardDeckModel;
-        public List<int> drawnCards = new List<int>();
+        
 
         public CardDeckController()
         {
@@ -24,55 +25,23 @@ namespace blackjack_game
             return _cardDeckView;
         }
 
-        //********************STATIC HELPER CLASS************************//
-
-
-        public static class StaticRandom
+        public string[] shuffleDeck()
         {
-            private static int seed;
-
-            private static ThreadLocal<Random> threadLocal = new ThreadLocal<Random>
-                (() => new Random(Interlocked.Increment(ref seed)));
-
-            static StaticRandom()
-            {
-                seed = Environment.TickCount;
-            }
-
-            public static Random Instance { get { return threadLocal.Value; } }
+            Random rnd = new Random();
+            _cardDeckModel.ArrCards = _cardDeckModel.ArrCards.OrderBy(x => rnd.Next()).ToArray();
+            return _cardDeckModel.ArrCards;
         }
-
-
-        //****************************************************************//
-
 
         public string getRandomCard()
         {
-
-            int cardIndex = StaticRandom.Instance.Next(0, 52);
-            int sizeOfDrawnCards = drawnCards.Count();
-
-
-            for (int i = 0; i < sizeOfDrawnCards; i++)
-            {
-                if (drawnCards.Contains(cardIndex))
-                {
-                    drawnCards.Add(cardIndex);
-                    getRandomCard();
-                }
-                else
-                {
-                    drawnCards.Add(cardIndex);
-                    return _cardDeckModel.ArrCards[cardIndex];
-                }
-            }
-            drawnCards.Add(cardIndex);
-            return _cardDeckModel.ArrCards[cardIndex];
+            string drawCard = _cardDeckModel.ArrCards[teller];
+            teller++;
+            return drawCard;
         }
 
         public void resetDrawnCards()
         {
-            drawnCards.Clear();
+            
         }
 
         public int getCardValue(string card, int currentTotal)

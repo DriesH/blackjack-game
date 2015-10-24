@@ -17,6 +17,7 @@ namespace blackjack_game
     public string[] ArrCards
     {
       get { return arrCards; }
+      set { arrCards = value;  }
     }
 
   }

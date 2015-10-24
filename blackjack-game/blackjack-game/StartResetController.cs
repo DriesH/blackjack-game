@@ -10,7 +10,7 @@ namespace blackjack_game
     public class StartResetController
     {
         StartResetView _startResetView;
-        CardDeckController _cardDeckController;
+        public CardDeckController _cardDeckController;
         public StartResetModel _startResetModel;
 
         public StartResetController(CardDeckController _controller)
