@@ -12,7 +12,10 @@ namespace blackjack_game
     CardDeckView _cardDeckView;
     public CardDeckModel _cardDeckModel;
     public int teller = 0;
+    public int ElevenCounter = 0;
     public string[] shuffledDeck;
+    public int totalValue = 0;
+    public bool bust = false;
 
 
     public CardDeckController()
@@ -37,6 +40,8 @@ namespace blackjack_game
     {
       string drawCard = _cardDeckModel.ArrCards[teller];
       Console.WriteLine(drawCard);
+      getCardValue(drawCard);
+      bustCheck();
       teller++;
       return drawCard;
     }
@@ -46,42 +51,98 @@ namespace blackjack_game
       teller = 0;
     }
 
-    public int getCardValue(string card, int currentTotal)
+    public void getCardValue(string card)
     {
       string lastChar = card.Substring(card.Length - 1, 1);
 
       switch (lastChar)
       {
         case "2":
-          return 2;
+          addCurrentTotal(2);
+          break;
         case "3":
-          return 3;
+          addCurrentTotal(3);
+          break;
         case "4":
-          return 4;
+          addCurrentTotal(4);
+          break;
         case "5":
-          return 5;
+          addCurrentTotal(5);
+          break;
         case "6":
-          return 6;
+          addCurrentTotal(6);
+          break;
         case "7":
-          return 7;
+          addCurrentTotal(7);
+          break;
         case "8":
-          return 8;
+          addCurrentTotal(8);
+          break;
         case "9":
-          return 9;
+          addCurrentTotal(9);
+          break;
         case "0":
-          return 10;
+          addCurrentTotal(10);
+          break;
         case "J":
-          return 10; ;
+          addCurrentTotal(10);
+          break;
         case "Q":
-          return 10;
+          addCurrentTotal(10);
+          break;
         case "K":
-          return 10;
+          addCurrentTotal(10);
+          break;
         case "A":
-          return 11;
+          if(totalValue <= 10)
+          {
+            addCurrentTotal(11);
+            ElevenCounter++;
+            break;
+          }
+          else
+          {
+            addCurrentTotal(1);
+            break;
+          };
         default:
           Console.WriteLine("Oops! Something went wrong ;(");
-          return 0;
+          break;
       }
+    }
+
+    public void addCurrentTotal(int addTotal)
+    {
+      totalValue += addTotal;
+    }
+
+    public int getCurrentTotal()
+    {
+      return totalValue;
+    }
+
+    public void bustCheck()
+    {
+      if (totalValue > 21)
+      {
+        if (ElevenCounter == 0)
+        {
+          Console.WriteLine("BUSTED NJIIIGAAAA");
+
+          Console.WriteLine(totalValue);
+
+          bust = true;
+        }
+        else
+        {
+          totalValue -= 10;
+          ElevenCounter--;
+          bustCheck();
+        }
+      }
+
+      Console.WriteLine(totalValue);
+
     }
   }
 }
