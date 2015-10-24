@@ -14,14 +14,16 @@ namespace blackjack_game
         public StartResetModel _startResetModel;
         public PlayerController _playerController;
         public PlayerBetController _playerBetController;
+        public DealerController _dealerController;
 
-        public StartResetController(CardDeckController _cdController, PlayerController _pController, PlayerBetController _pbController)
+        public StartResetController(CardDeckController _cdController, PlayerController _pController, PlayerBetController _pbController, DealerController _dController)
         {
             _cardDeckController = _cdController;
             _startResetView = new StartResetView(this);
             _startResetModel = new StartResetModel();
             _playerController = _pController;
             _playerBetController = _pbController;
+            _dealerController = _dController;
         }
 
         public StartResetView getView()
@@ -40,7 +42,8 @@ namespace blackjack_game
         public void StartGame(Button start)
         {
             //init
-            string[] currentHand = _playerController._playerModel.CurrentHand;
+            string[] currentPlayerHand = _playerController._playerModel.CurrentPlayerHand;
+            string[] currentDealerHand = _dealerController._dealerModel.DealerHand;
             int currentMoney = _playerController._playerModel.CurrentMoney;
             Clearlabels();
 
@@ -51,10 +54,17 @@ namespace blackjack_game
 
             //display the vars in labels           
             _playerController.getView()._lblMoney.Text += currentMoney.ToString();
+            
 
-            for (int i = 0; i < currentHand.Length; i++) {
-                _playerController.getView()._lblKaarten.Text += currentHand[i];
+            for (int i = 0; i < currentPlayerHand.Length; i++) {
+                _playerController.getView()._lblKaarten.Text += " " + currentPlayerHand[i];
             }
+
+            for (int i = 0; i < currentDealerHand.Length; i++)
+            {
+                _dealerController.getView()._lblDealerCards.Text += " " + currentDealerHand[i];
+            }
+
 
 
         }
@@ -69,6 +79,7 @@ namespace blackjack_game
             {
                 _playerController.getView()._lblMoney.Text = "Money: ";
                 _playerController.getView()._lblKaarten.Text = "Kaarten: ";
+                _dealerController.getView()._lblDealerCards.Text = "Dealer kaarten: ";
                 _startResetModel.GameStarted = false;
                 start.Visible = true;
                 _cardDeckController.resetDrawnCards();
