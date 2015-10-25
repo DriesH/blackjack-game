@@ -14,7 +14,7 @@ namespace blackjack_game
     {
         //bool isPlayerTurn = true;
         PlayerController player1;
-        CardDeckController cards;
+        //CardDeckController cards;
         StartResetController startReset;
         PlayerBetController bet;
         DealerController dealer;
@@ -28,22 +28,22 @@ namespace blackjack_game
         private void Form1_Load(object sender, EventArgs e)
         {
             //init
-            cards = new CardDeckController();
-            player1 = new PlayerController(cards);
+            //cards = new CardDeckController();
+            dealer = new DealerController();
+            player1 = new PlayerController(dealer);
             bet = new PlayerBetController(player1);
-            dealer = new DealerController(cards);
-            startReset = new StartResetController(cards, player1, bet, dealer);
+            startReset = new StartResetController(player1, bet, dealer);
             
             //add
             Controls.Add(player1.getView());
             Controls.Add(bet.getView());
             Controls.Add(startReset.getView());
-            Controls.Add(cards.getView());
+            //Controls.Add(cards.getView());
             Controls.Add(dealer.getView());
 
             //pos for bet view
             int yPosBet = 0;
-            yPosBet = player1.getView().Height + cards.getView().Height;
+            yPosBet = player1.getView().Height;
             bet.getView().Location = new Point(0, yPosBet);
 
             //pos for start reset view
@@ -51,14 +51,9 @@ namespace blackjack_game
             xPosStart = player1.getView().Width;
             startReset.getView().Location = new Point(xPosStart + 50, 0);
 
-            //pos for cards
-            int yPosCards = 0;
-            yPosCards = player1.getView().Height;
-            cards.getView().Location = new Point(0, yPosCards);
-
             //pos for dealer
             int xPosDealer = 0;
-            xPosDealer = cards.getView().Width + startReset.getView().Width;
+            xPosDealer = player1.getView().Width + startReset.getView().Width;
             dealer.getView().Location = new Point(xPosDealer + 80, 0);
         }
     }

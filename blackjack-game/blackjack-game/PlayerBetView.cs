@@ -38,6 +38,18 @@ namespace blackjack_game
             }
         }
 
+        public Label _lblMoneyInPot
+        {
+            get
+            {
+                return lblMoneyPot;
+            }
+            set
+            {
+                lblMoneyPot = value;
+            }
+        }
+
 
 
         public PlayerBetView(PlayerBetController _controller)
@@ -60,9 +72,9 @@ namespace blackjack_game
                 if (_playerBetController._playerController._playerModel.CurrentMoney >= int.Parse(txtBetMoney.Text) && int.Parse(txtBetMoney.Text) > 0)
                 {
                     _playerBetController.Bet(txtBetMoney);
-                    _playerBetController.putMoneyInPut(lblMoneyPot);
-                    _playerBetController._playerController._cardDeckController.getView()._BtnDrawCard.Enabled = true;
-                    _playerBetController._playerController._cardDeckController.getView()._BtnStop.Enabled = true;
+                    _playerBetController.putMoneyInPut(_lblMoneyInPot);
+                    _playerBetController._playerController.getView()._BtnDrawCard.Enabled = true;
+                    _playerBetController._playerController.getView()._BtnStop.Enabled = true;
                     _btnBet.Enabled = false;
                     _txtBetMoney.Enabled = false;
                     _txtBetMoney.Text = "";

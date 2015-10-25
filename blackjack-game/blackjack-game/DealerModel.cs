@@ -10,9 +10,10 @@ namespace blackjack_game
     {
         string[] dealerHand = new string[11];
 
-        public string[] DealerHand {
+        public string[] DealerHand
+        {
             get { return dealerHand; }
             set { dealerHand = value; }
-            }
+        }
     }
 }

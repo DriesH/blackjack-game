@@ -10,15 +10,14 @@ namespace blackjack_game
     public class StartResetController
     {
         StartResetView _startResetView;
-        public CardDeckController _cardDeckController;
+        
         public StartResetModel _startResetModel;
         public PlayerController _playerController;
         public PlayerBetController _playerBetController;
         public DealerController _dealerController;
 
-        public StartResetController(CardDeckController _cdController, PlayerController _pController, PlayerBetController _pbController, DealerController _dController)
+        public StartResetController(PlayerController _pController, PlayerBetController _pbController, DealerController _dController)
         {
-            _cardDeckController = _cdController;
             _startResetView = new StartResetView(this);
             _startResetModel = new StartResetModel();
             _playerController = _pController;
@@ -44,12 +43,11 @@ namespace blackjack_game
             string[] currentDealerHand = _dealerController._dealerModel.DealerHand;
             int currentMoney = _playerController._playerModel.CurrentMoney;
             Clearlabels();
-            _cardDeckController.clearValues();
+            
 
             //set vars at start
-            _startResetModel.GameStarted = true;
             start.Visible = false;
-            _playerController._playerModel.CurrentMoney = 1000;
+            //_playerController._playerModel.CurrentMoney = 1000;
 
             //display the vars in labels           
             _playerController.getView()._lblMoney.Text += currentMoney.ToString();
@@ -74,12 +72,16 @@ namespace blackjack_game
             }
             else
             {
-                _playerController.getView()._lblMoney.Text = "Money: ";
+                _playerController.clearValues();
+                //_playerController.getView()._lblMoney.Text = "Money: ";
                 _playerController.getView()._lblKaarten.Text = "Kaarten: ";
                 _dealerController.getView()._lblDealerCards.Text = "Dealer kaarten: ";
-                _startResetModel.GameStarted = false;
                 start.Visible = true;
-                _cardDeckController.resetDrawnCards();
+                _playerController.resetDrawnCards();
+                //_playerController._playerModel.CurrentMoney = 1000;
+                _playerBetController.getView()._lblMoneyInPot.Text = "Money in pot: ";
+                _playerController._playerModel.BettedMoney = 0;
+                _playerController._playerModel.MoneyInPot = 0;
             }
         }
     }
