@@ -11,8 +11,7 @@ namespace blackjack_game
     {
         CardDeckView _cardDeckView;
         public CardDeckModel _cardDeckModel;
-        
-        
+              
         public CardDeckController()
         {
             _cardDeckView = new CardDeckView(this);
