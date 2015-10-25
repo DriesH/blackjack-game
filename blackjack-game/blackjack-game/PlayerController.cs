@@ -173,11 +173,6 @@ namespace blackjack_game
             }
         }
 
-        public int getCurrentTotal()
-        {
-            return _playerModel.TotalValue;
-        }
-
         public void bustCheck(int value, string turn)
         {
             if (turn == "dealer")
@@ -194,7 +189,7 @@ namespace blackjack_game
                     }
                     else
                     {
-                        value -= 10;
+                        _playerModel.CurrentDealerTotal -= 10;
                         _playerModel.ElevenCounter--;
                         bustCheck(value, "dealer");
                     }
@@ -217,7 +212,7 @@ namespace blackjack_game
                     }
                     else
                     {
-                        value -= 10;
+                        _playerModel.CurrentPlayerTotal -= 10;
                         _playerModel.ElevenCounter--;
                         bustCheck(value, "player");
                     }
