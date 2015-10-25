@@ -9,7 +9,7 @@ namespace blackjack_game
     public class PlayerModel
     {
         int currentMoney = 1000;
-        string[] currentHand = new string[2];
+        string[] currentPlayerHand = new string[11];
 
         public int CurrentMoney
         {
@@ -23,15 +23,15 @@ namespace blackjack_game
             }
         }
 
-        public string[] CurrentHand
+        public string[] CurrentPlayerHand
         {
             get
             {
-                return currentHand;
+                return currentPlayerHand;
             }
             set
             {
-                currentHand = value;
+                currentPlayerHand = value;
             }
         }
     }

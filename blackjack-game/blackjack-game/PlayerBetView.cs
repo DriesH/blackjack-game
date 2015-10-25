@@ -57,10 +57,15 @@ namespace blackjack_game
             int textBoxValue;
             if (int.TryParse(txtBetMoney.Text, out textBoxValue))
             {
-                if (_playerBetController._playerController._playerModel.CurrentMoney >= int.Parse(txtBetMoney.Text))
+                if (_playerBetController._playerController._playerModel.CurrentMoney >= int.Parse(txtBetMoney.Text) && int.Parse(txtBetMoney.Text) > 0)
                 {
                     _playerBetController.Bet(txtBetMoney);
                     _playerBetController.putMoneyInPut(lblMoneyPot);
+                    _playerBetController._playerController._cardDeckController.getView()._BtnDrawCard.Enabled = true;
+                    _playerBetController._playerController._cardDeckController.getView()._BtnStop.Enabled = true;
+                    _btnBet.Enabled = false;
+                    _txtBetMoney.Enabled = false;
+                    _txtBetMoney.Text = "";
                 }
                 else
                 {

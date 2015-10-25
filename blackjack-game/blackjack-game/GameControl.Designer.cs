@@ -32,10 +32,10 @@
             // 
             // GameControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1218, 748);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ClientSize = new System.Drawing.Size(776, 389);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "GameControl";
             this.Text = "Blackjack";
             this.Load += new System.EventHandler(this.Form1_Load);

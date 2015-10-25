@@ -29,12 +29,12 @@ namespace blackjack_game
         {
           //shuffle deck/set boolean gamestarted on true/draw the player his first 2 cards
           _startResetController._cardDeckController.shuffle();
-          _startResetController.StartGame(btnStart);
           _startResetController._playerController.drawPlayerHand();
-        
-          //set enabled
-          _startResetController._cardDeckController.getView()._BtnDrawCard.Enabled = true;
-          _startResetController._cardDeckController.getView()._BtnStop.Enabled = true;
+          _startResetController._dealerController.drawDealerHand();
+          _startResetController.StartGame(btnStart);
+
+            //set enabled
+            
           _startResetController._playerBetController.getView()._btnBet.Enabled = true;
           _startResetController._playerBetController.getView()._txtBetMoney.Enabled = true;
         }
