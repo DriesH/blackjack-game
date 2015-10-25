@@ -10,13 +10,14 @@ namespace blackjack_game
     {
         public DealerModel _dealerModel;
         DealerView _dealerView;
-        CardDeckController _cardDeckController;
+        PlayerController _playerController;
 
-        public DealerController(CardDeckController _cdController)
+        public DealerController(PlayerController _pController)
         {
             _dealerModel = new DealerModel();
             _dealerView = new DealerView(this);
-            _cardDeckController = _cdController;
+            _playerController = _pController;
+            
 
         }
 
@@ -29,7 +30,7 @@ namespace blackjack_game
         {
             for (int counter = 0; counter < 2; counter++)
             {
-                _dealerModel.DealerHand[counter] = _cardDeckController.getRandomCard("dealer");
+                _dealerModel.DealerHand[counter] = _playerController.getRandomCard("dealer");
             }
         }
     }
