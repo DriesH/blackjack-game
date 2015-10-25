@@ -29,9 +29,9 @@ namespace blackjack_game
         {
             //init
             //cards = new CardDeckController();
-            player1 = new PlayerController();
+            dealer = new DealerController();
+            player1 = new PlayerController(dealer);
             bet = new PlayerBetController(player1);
-            dealer = new DealerController(player1);
             startReset = new StartResetController(player1, bet, dealer);
             
             //add

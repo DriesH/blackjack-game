@@ -8,6 +8,8 @@ namespace blackjack_game
 {
     public class PlayerModel
     {
+
+        string winLose = "There is no winner";
         int currentMoney = 1000;
         string[] currentPlayerHand = new string[11];
 
@@ -20,10 +22,38 @@ namespace blackjack_game
         int teller = 0;
         int elevenCounter = 0;
         int totalValue = 0;
-        int currentPlayerTotal = 0;
-        int currentDealerTotal = 0;
+        static int currentPlayerTotal = 0;
+        static int currentDealerTotal = 0;
 
-        bool isBust = false;
+        bool playerIsBust = false;
+        bool dealerIsBust = false;
+
+        int bettedMoney;
+        int moneyInPot;
+
+        public int BettedMoney
+        {
+            get
+            {
+                return bettedMoney;
+            }
+            set
+            {
+                bettedMoney = value;
+            }
+        }
+
+        public int MoneyInPot
+        {
+            get
+            {
+                return moneyInPot;
+            }
+            set
+            {
+                moneyInPot = value;
+            }
+        }
 
 
         public int CurrentMoney
@@ -93,11 +123,24 @@ namespace blackjack_game
             set { currentDealerTotal = value; }
         }
 
-        public bool IsBust
+        public bool PlayerIsBust
         {
-            get { return isBust; }
-            set { isBust = value; }
+            get { return playerIsBust; }
+            set { playerIsBust = value; }
         }
+
+        public bool DealerIsBust
+        {
+            get { return dealerIsBust; }
+            set { dealerIsBust = value; }
+        }
+
+        public string WinLose
+        {
+            get { return winLose;  }
+            set { winLose = value; }
+        }
+
     }
 }
 
