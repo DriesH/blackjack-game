@@ -190,6 +190,7 @@ namespace blackjack_game
                     else
                     {
                         _playerModel.CurrentDealerTotal -= 10;
+                        value -= 10;
                         _playerModel.ElevenCounter--;
                         bustCheck(value, "dealer");
                     }
@@ -213,6 +214,7 @@ namespace blackjack_game
                     else
                     {
                         _playerModel.CurrentPlayerTotal -= 10;
+                        value -= 10;
                         _playerModel.ElevenCounter--;
                         bustCheck(value, "player");
                     }
@@ -235,7 +237,7 @@ namespace blackjack_game
         {
             
 
-            if ((!_playerModel.PlayerIsBust && _playerModel.CurrentPlayerTotal == _playerModel.CurrentDealerTotal) || (_playerModel.PlayerIsBust && _playerModel.DealerIsBust))
+            if ((_playerModel.CurrentPlayerTotal == _playerModel.CurrentDealerTotal) || (_playerModel.PlayerIsBust && _playerModel.DealerIsBust))
             {
                 _playerModel.WinLose = "Draw!";
             }
