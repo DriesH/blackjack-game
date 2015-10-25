@@ -10,20 +10,14 @@ namespace blackjack_game
     {
         PlayerView _playerView;
         public PlayerModel _playerModel;
+        public DealerController _dealerController;
 
-        //public PlayerController()
-        //{
-        //    _cardDeckController = new CardDeckController();
-        //    _playerView = new PlayerView(this);
-        //    _playerModel = new PlayerModel();
-        //}
-
-        public PlayerController()
+        public PlayerController(DealerController _dController)
         {
             _playerView = new PlayerView(this);
             _playerModel = new PlayerModel();
+            _dealerController = _dController;
         }
-
 
 
         public PlayerView getView()
@@ -49,6 +43,14 @@ namespace blackjack_game
             }
         }
 
+        public void drawDealerHand()
+        {
+            for (int counter = 0; counter < 2; counter++)
+            {
+                _dealerController._dealerModel.DealerHand[counter] = getRandomCard("dealer");
+            }
+        }
+
         public string[] shuffle()
         {
             Random rnd = new Random();
@@ -64,11 +66,12 @@ namespace blackjack_game
 
             if (turn == "dealer")
             {
-                bustCheck(_playerModel.CurrentDealerTotal);
+                bustCheck(_playerModel.CurrentDealerTotal, turn);
             }
+
             if (turn == "player")
             {
-                bustCheck(_playerModel.CurrentPlayerTotal);
+                bustCheck(_playerModel.CurrentPlayerTotal, turn);
             }
 
             _playerModel.Teller++;
@@ -175,25 +178,54 @@ namespace blackjack_game
             return _playerModel.TotalValue;
         }
 
-        public void bustCheck(int value)
+        public void bustCheck(int value, string turn)
         {
-            if (value > 21)
+            if (turn == "dealer")
             {
-                if (_playerModel.ElevenCounter == 0)
+                if (value > 21)
                 {
-                    Console.WriteLine("BUSTED NJIIIGAAAA");
+                    if (_playerModel.ElevenCounter == 0)
+                    {
+                        Console.WriteLine("BUSTED NJIIIGAAAA");
 
-                    Console.WriteLine(value);
+                        Console.WriteLine(value);
 
-                    _playerModel.IsBust = true;
-                }
-                else
-                {
-                    value -= 10;
-                    _playerModel.ElevenCounter--;
-                    bustCheck(value);
+                        _playerModel.DealerIsBust = true;
+                    }
+                    else
+                    {
+                        value -= 10;
+                        _playerModel.ElevenCounter--;
+                        bustCheck(value, "dealer");
+                    }
                 }
             }
+
+            if (turn == "player")
+            {
+                if (value > 21)
+                {
+                    if (_playerModel.ElevenCounter == 0)
+                    {
+                        Console.WriteLine("BUSTED NJIIIGAAAA");
+
+                        Console.WriteLine(value);
+
+                        _playerModel.PlayerIsBust = true;
+
+                        getView()._BtnDrawCard.Enabled = false;
+                    }
+                    else
+                    {
+                        value -= 10;
+                        _playerModel.ElevenCounter--;
+                        bustCheck(value, "player");
+                    }
+                }
+            }
+
+
+
             Console.WriteLine(value);
         }
 
@@ -203,8 +235,32 @@ namespace blackjack_game
             _playerModel.CurrentPlayerTotal = 0;
 
         }
+
+        public void checkWinLose()
+        {
+            
+
+            if ((!_playerModel.PlayerIsBust && _playerModel.CurrentPlayerTotal == _playerModel.CurrentDealerTotal) || (_playerModel.PlayerIsBust && _playerModel.DealerIsBust))
+            {
+                _playerModel.WinLose = "Draw!";
+            }
+            else if ((_playerModel.PlayerIsBust && !_playerModel.DealerIsBust) || ( (_playerModel.CurrentPlayerTotal < _playerModel.CurrentDealerTotal) && (!_playerModel.PlayerIsBust && !_playerModel.DealerIsBust)))
+            {
+                _playerModel.WinLose = "You Lose!";
+            }
+            else if ((!_playerModel.PlayerIsBust && _playerModel.DealerIsBust) || ( (_playerModel.CurrentPlayerTotal > _playerModel.CurrentDealerTotal) && (!_playerModel.PlayerIsBust && !_playerModel.DealerIsBust)))
+            {
+                _playerModel.WinLose = "You Win!";
+                _playerModel.CurrentMoney += _playerModel.BettedMoney * 2; 
+            }
+            Console.Write(_playerModel.WinLose);
+
+            getView()._lblWinLose.Text = _playerModel.WinLose;
+            
+        }
+
+
+
     }
-
-
 }
 

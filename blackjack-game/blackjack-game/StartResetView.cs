@@ -30,7 +30,7 @@ namespace blackjack_game
             //shuffle deck/set boolean gamestarted on true/draw the player his first 2 cards
             _startResetController._playerController.shuffle();
             _startResetController._playerController.drawPlayerHand();
-            _startResetController._dealerController.drawDealerHand();
+            _startResetController._playerController.drawDealerHand();
             _startResetController.StartGame(btnStart);
 
             //set enabled
@@ -49,6 +49,7 @@ namespace blackjack_game
             _startResetController._playerController.getView()._BtnStop.Enabled = false;
             _startResetController._playerBetController.getView()._btnBet.Enabled = false;
             _startResetController._playerBetController.getView()._txtBetMoney.Enabled = false;
+            _startResetController._playerController.getView()._lblWinLose.Text = "";
 
 
         }
