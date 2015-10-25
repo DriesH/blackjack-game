@@ -35,10 +35,8 @@ namespace blackjack_game
         {
             _playerController.getView()._lblMoney.Text = "Money: ";
             _playerController.getView()._lblKaarten.Text = "Kaarten: ";
-
         }
-
-
+        
         public void StartGame(Button start)
         {
             //init
@@ -46,6 +44,7 @@ namespace blackjack_game
             string[] currentDealerHand = _dealerController._dealerModel.DealerHand;
             int currentMoney = _playerController._playerModel.CurrentMoney;
             Clearlabels();
+            _cardDeckController.clearValues();
 
             //set vars at start
             _startResetModel.GameStarted = true;
@@ -54,9 +53,10 @@ namespace blackjack_game
 
             //display the vars in labels           
             _playerController.getView()._lblMoney.Text += currentMoney.ToString();
-            
 
-            for (int i = 0; i < currentPlayerHand.Length; i++) {
+
+            for (int i = 0; i < currentPlayerHand.Length; i++)
+            {
                 _playerController.getView()._lblKaarten.Text += " " + currentPlayerHand[i];
             }
 
@@ -64,9 +64,6 @@ namespace blackjack_game
             {
                 _dealerController.getView()._lblDealerCards.Text += " " + currentDealerHand[i];
             }
-
-
-
         }
 
         public void ResetGame(Button start)

@@ -10,60 +10,58 @@ using System.Windows.Forms;
 
 namespace blackjack_game
 {
-  public partial class CardDeckView : UserControl
-  {
-    CardDeckController _cardDeckController;
-
-    public Button _BtnDrawCard
+    public partial class CardDeckView : UserControl
     {
-        get
-        {
-            return btnDrawCard;
-        }
-        set
-        {
-            btnDrawCard = value;
-        }
-    }
+        CardDeckController _cardDeckController;
 
-    public Button _BtnStop
-    {
-        get
+        public Button _BtnDrawCard
         {
-            return btnStop;
+            get
+            {
+                return btnDrawCard;
+            }
+            set
+            {
+                btnDrawCard = value;
+            }
         }
-        set
+
+        public Button _BtnStop
         {
-            btnStop = value;
+            get
+            {
+                return btnStop;
+            }
+            set
+            {
+                btnStop = value;
+            }
         }
-    }
-
-
-
+        
         public CardDeckView(CardDeckController _controller)
-    {
-      _cardDeckController = _controller;
-      InitializeComponent();
-    }
-
-    private void CardDeckView_Load(object sender, EventArgs e)
-    {
-          btnDrawCard.Enabled = false;
-          btnStop.Enabled = false;
-    }
-
-    private void btnDrawCard_Click(object sender, EventArgs e)
-    {
-            _cardDeckController.getRandomCard();
-            //_cardDeckController.bustCheck();
-            
-
+        {
+            _cardDeckController = _controller;
+            InitializeComponent();
         }
 
-    private void btnStop_Click(object sender, EventArgs e)
-    {
+        private void CardDeckView_Load(object sender, EventArgs e)
+        {
+            btnDrawCard.Enabled = false;
+            btnStop.Enabled = false;
+        }
 
+        private void btnDrawCard_Click(object sender, EventArgs e)
+        {
+            _cardDeckController.getRandomCard("player");
+            //_cardDeckController.bustCheck();
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            if (_cardDeckController._cardDeckModel.CurrentDealerTotal < 16)
+            {
+                
+            }
+        }
     }
-  }
 }
-
