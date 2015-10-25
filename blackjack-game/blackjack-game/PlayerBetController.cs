@@ -39,11 +39,11 @@ namespace blackjack_game
                 if (int.TryParse(txtBox.Text, out betMoneyValue))
                 {
                     betMoneyValue = int.Parse(txtBox.Text);
-                    _playerBetModel.MoneyInPot += betMoneyValue;
+                    _playerController._playerModel.MoneyInPot += betMoneyValue;
                     
                     if (betMoneyValue <= _playerController._playerModel.CurrentMoney)
                     {
-                        _playerBetModel.BettedMoney = betMoneyValue;
+                        _playerController._playerModel.BettedMoney = betMoneyValue;
                         _playerController._playerModel.CurrentMoney -= betMoneyValue;
                         _playerController.updateMoney();
                     }
@@ -59,7 +59,7 @@ namespace blackjack_game
 
         public void putMoneyInPut(Label label)
         {
-            label.Text = "Money in pot: " + _playerBetModel.MoneyInPot.ToString();
+            label.Text = "Money in pot: " + _playerController._playerModel.MoneyInPot.ToString();
         }
 
 

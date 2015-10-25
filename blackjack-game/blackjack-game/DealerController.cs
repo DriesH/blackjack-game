@@ -10,13 +10,14 @@ namespace blackjack_game
     {
         public DealerModel _dealerModel;
         DealerView _dealerView;
-        CardDeckController _cardDeckController;
-     
+        
+
         public DealerController()
         {
-            _dealerModel        = new DealerModel();
-            _dealerView         = new DealerView();
-            _cardDeckController = new CardDeckController();
+            _dealerModel = new DealerModel();
+            _dealerView = new DealerView(this);
+                      
+
         }
 
         public DealerView getView()
@@ -24,12 +25,6 @@ namespace blackjack_game
             return _dealerView;
         }
 
-        public void GiveDealerCards()
-        {
-          _cardDeckController.getRandomCard();
-
-        }
         
-       
     }
 }

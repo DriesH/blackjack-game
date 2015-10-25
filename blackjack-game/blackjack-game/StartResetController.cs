@@ -10,16 +10,19 @@ namespace blackjack_game
     public class StartResetController
     {
         StartResetView _startResetView;
-        public CardDeckController _cardDeckController;
+        
         public StartResetModel _startResetModel;
         public PlayerController _playerController;
+        public PlayerBetController _playerBetController;
+        public DealerController _dealerController;
 
-        public StartResetController(CardDeckController _cdController, PlayerController _pController)
+        public StartResetController(PlayerController _pController, PlayerBetController _pbController, DealerController _dController)
         {
-            _cardDeckController = _cdController;
             _startResetView = new StartResetView(this);
             _startResetModel = new StartResetModel();
             _playerController = _pController;
+            _playerBetController = _pbController;
+            _dealerController = _dController;
         }
 
         public StartResetView getView()
@@ -27,10 +30,38 @@ namespace blackjack_game
             return _startResetView;
         }
 
+        void Clearlabels()
+        {
+            _playerController.getView()._lblMoney.Text = "Money: ";
+            _playerController.getView()._lblKaarten.Text = "Kaarten: ";
+        }
+        
         public void StartGame(Button start)
         {
-            _startResetModel.GameStarted = true;
-            start.Visible = false; 
+            //init
+            string[] currentPlayerHand = _playerController._playerModel.CurrentPlayerHand;
+            string[] currentDealerHand = _dealerController._dealerModel.DealerHand;
+            int currentMoney = _playerController._playerModel.CurrentMoney;
+            Clearlabels();
+            
+
+            //set vars at start
+            start.Visible = false;
+            //_playerController._playerModel.CurrentMoney = 1000;
+
+            //display the vars in labels           
+            _playerController.getView()._lblMoney.Text += currentMoney.ToString();
+
+
+            for (int i = 0; i < currentPlayerHand.Length; i++)
+            {
+                _playerController.getView()._lblKaarten.Text += " " + currentPlayerHand[i];
+            }
+
+            for (int i = 0; i < currentDealerHand.Length; i++)
+            {
+                _dealerController.getView()._lblDealerCards.Text += " " + currentDealerHand[i];
+            }
         }
 
         public void ResetGame(Button start)
@@ -41,9 +72,16 @@ namespace blackjack_game
             }
             else
             {
-                _startResetModel.GameStarted = false;
+                _playerController.clearValues();
+                //_playerController.getView()._lblMoney.Text = "Money: ";
+                _playerController.getView()._lblKaarten.Text = "Kaarten: ";
+                _dealerController.getView()._lblDealerCards.Text = "Dealer kaarten: ";
                 start.Visible = true;
-                _cardDeckController.resetDrawnCards();
+                _playerController.resetDrawnCards();
+                //_playerController._playerModel.CurrentMoney = 1000;
+                _playerBetController.getView()._lblMoneyInPot.Text = "Money in pot: ";
+                _playerController._playerModel.BettedMoney = 0;
+                _playerController._playerModel.MoneyInPot = 0;
             }
         }
     }

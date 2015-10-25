@@ -27,8 +27,7 @@ namespace blackjack_game
 
     private void btnDrawCard_Click(object sender, EventArgs e)
     {
-      _cardDeckController.getRandomCard();
-      //_cardDeckController.bustCheck();
+      Console.WriteLine(_cardDeckController.getCardValue(_cardDeckController.getRandomCard(), 0));
     }
 
     private void btnStop_Click(object sender, EventArgs e)

@@ -8,6 +8,12 @@ namespace blackjack_game
 {
     public class DealerModel
     {
+        string[] dealerHand = new string[11];
 
+        public string[] DealerHand
+        {
+            get { return dealerHand; }
+            set { dealerHand = value; }
+        }
     }
 }

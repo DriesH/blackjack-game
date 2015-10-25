@@ -47,9 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CardDeckView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="DealerController.cs" />
     <Compile Include="DealerModel.cs" />
     <Compile Include="DealerView.cs">
@@ -72,11 +69,6 @@
     <Compile Include="PlayerBetView.Designer.cs">
       <DependentUpon>PlayerBetView.cs</DependentUpon>
     </Compile>
-    <Compile Include="CardDeckController.cs" />
-    <Compile Include="CardDeckModel.cs" />
-    <Compile Include="CardDeckView.Designer.cs">
-      <DependentUpon>CardDeckView.cs</DependentUpon>
-    </Compile>
     <Compile Include="PlayerController.cs" />
     <Compile Include="PlayerModel.cs" />
     <Compile Include="PlayerView.cs">
@@ -95,9 +87,6 @@
     <Compile Include="StartResetView.Designer.cs">
       <DependentUpon>StartResetView.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CardDeckView.resx">
-      <DependentUpon>CardDeckView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DealerView.resx">
       <DependentUpon>DealerView.cs</DependentUpon>
     </EmbeddedResource>
